@@ -96,6 +96,12 @@ nav a{
     padding:            10vw 20vw 10vw 20vw;
   }
 
+  /* How */
+  .how > * {
+    margin-top:         20px;
+    list-style-type:    circle;   
+  }  
+
   /* When */
   .when > * {
     margin-top:         20px;
