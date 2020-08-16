@@ -96,25 +96,51 @@ nav a{
     padding:            10vw 20vw 10vw 20vw;
   }
 
-  /* How */
-  .how > * {
+  /* What */
+  .what > * {
     margin-top:         20px;
     list-style-type:    circle;   
-  }  
+  } 
 
-  /* When */
-  .when > * {
-    margin-top:         20px;
-    list-style-type:    circle;   
+.what td {
+    border:             1px solid #000000;
   }
+.what table {
+    width:              100%;
+} 
 
-  .when td {
+.what td {
+    padding:            10px 10px 10px 50px;
+}
+
+.what li {
+    padding-top:        5px;
+}
+
+  .what .table-heading {
+    padding-top:        20px;
+}
+
+/* How */
+.how > * {
+    margin-top:         20px;
+    list-style-type:    circle;   
+}  
+
+/* When */
+.when > * {
+    margin-top:         20px;
+    list-style-type:    circle;   
+}
+
+.when td {
     padding-top:        20px;
     padding-right:      20px;
-  }
-  .schedule-table td:last-child {
+}
+
+.schedule-table td:last-child {
     text-align:         center;
-  }
+}
 
 
 /* Group Contract */
