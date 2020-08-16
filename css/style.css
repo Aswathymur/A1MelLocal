@@ -117,8 +117,14 @@ nav a{
     padding-top:        5px;
 }
 
-  .what .table-heading {
+.what .table-heading {
     padding-top:        20px;
+}
+.workload-table {
+    border:             1px solid #000000;
+}
+.workload-table td {
+    padding:            15px;
 }
 
 /* How */
