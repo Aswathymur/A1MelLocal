@@ -34,35 +34,40 @@ nav{
     
 }
 
+.content {
+    padding:            10vw 20vw 10vw 20vw;
+}
+
 /* Home */
 .banner {
-    height:             600px;
+    height:             auto;
     overflow:           hidden;
-    background-color:   green;
+    background-color:   #ffe54c;
 }
 
 .banner img {
-    max-height:         100%;
+    height:             auto;
     width:              100%
 }
 
-nav ul{
+nav ul {
     float:              right;
     margin-right:       40pt;
 }
-nav ul{
+nav ul {
     padding:            0;
     margin:             0 0 0 150pt;
     list-style:         none;
 }
 
-nav li{
+nav li {
     float:              left;
     display:            inline-block;
     margin:             0 8pt;
     line-height:        55pt;
 }
-nav a{
+
+nav a {
     color:              #000000;
     background-color:   #ffe54c;
     font-size:          13pt;
@@ -77,27 +82,34 @@ nav a{
     border:             1pt solid #c68400;
     transition:         .5s;
 }
- 
-.centered{
-    position:           absolute; 
-    top:                50%;
-    left:               38%;
-    font-style:         bold;
-    font-weight:        600;
-    text-shadow:        2pt 2pt #242222;
-    font-family:        Bradley Hand, cursive;
-    font-style:         italic;
-    font-size:          4em;
-    color:              rgb(255, 255, 255);
-    
-  }
 
-  .content {
-    padding:            10vw 20vw 10vw 20vw;
-  }
+.profile-container {
+    margin-top:         20px;
+    display:            grid;
+    grid-template-areas: "image blurb";
+    background-color:   #ffffe3;
+}
 
-  /* What */
-  .what > * {
+.profile-image {
+    width:              100px;
+    height:             auto;
+    grid-area:          image;
+    padding:            20px;
+
+}
+.profile-image img {
+    max-width:          200px;
+    height:             auto;
+}
+
+.profile-text {
+    grid-area:          blurb;
+    padding:            20px;
+    max-width:          400px;
+}
+
+/* What */
+.what > * {
     margin-top:         20px;
     list-style-type:    circle;   
   } 
