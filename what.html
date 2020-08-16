@@ -25,10 +25,588 @@
     </header>
     <div class="container">
 
-        <div class="content">
+        <div class="content what">
             <!-- Main Content-->
             <h2>What</h2>
             <h3>Section C</h3>
+
+            <h4>Project Name: MelLocal</h4>
+
+            <h4>Project Description</h4>
+
+            <p>Our project is a web application and as an extended feature, it will be a phone application, directed towards Tourists in Melbourne as a travel attraction application. Our app named MelLocal is a map which serves a purpose of directing Tourists to the best restaurants, bars and fun activities to do in Melbourne that are described as ‘experiences’ within our website application.</p>
+
+            <p>It lists information for an experience such as an average cost price, customer reviews and ratings. It also allows the user to filter through the search results, such as price preferences and whether they want bars, restaurants or other experiences to appear in the search results. It allows the user to create their own profile to save favourite experiences to a designated special folder. Local businesses can sign-up to the app to promote their business and list services they offer by filling in details of their business.</p>
+
+            <p>This project is unique due to its ability to perform a recognition feature. Tourists can capture an image of a location to retrieve its information on prices, reviews and ratings. They can also capture an image of a monument or historical building to gather information on its history. Thus, delivering an insightful and fun experience when using the app. As a team, we plan to create this web application with HTML, CSS, Python Flask and Javascript.</p>
+
+            <h3>User Stories</h3>
+
+            <img src="Images/miranda-lyn.png" alt="User Story Miranda Lyn">
+
+            <img src="Images/harry-smith.png" alt="User Story Harry Smith">
+
+            <img src="Images/neil-watson.png" alt="User Story Neil Watson">
+
+            <img src="Images/andrew-lui.png" alt="User Story Andrew Lui">
+
+            <h3>Demonstratable Outcomes</h3>
+
+            <h4>Project Motivation</h4>
+            <p>Following the ban on international travellers entering Australia in March 2020, the tourism industry has encountered significant downturn. In an effort to promote tourism in Melbourne we have decided to create an app that helps businesses and locals connect. This type of application poses challenging yet feasible tasks, such as interacting with a map API and designing an efficient and intuitive User Interface. Along with this our group has a strong interest in integrating image recognition as an additional tool that will enrich the map data displayed to the user. The reasons for this are to promote Melbourne as an in demand international travel location and help Melbourne businesses in their efforts to expand their market share. The integration of an image recognition tool serves as a unique selling point for this type of application and one which will challenge our technical expertise. </p>
+
+            <h5>Luke</h5>
+            <p>As an international student, exploring Melbourne and visiting local places (not just tourist attractions) have become a hobby and one of my essential needs since my first moment arrived in Australia. This is my motivation behind the app and I’m also looking forward to further improving the practical application of my skill with back-end development, especially with Java and Python programming languages. Collaborating with other members with more experiences with these areas during the features development phase of the project would directly help me to extend my knowledge and understand how to apply them. Team building is also an important skill that I want to get more familiar with because it’s made up of soft skills such as communication, time management and collaboration that can be trained throughout this project.</p>
+
+            <h5>Harry</h5>
+            <p>As an exchange student and arriving in Melbourne for the first time, everything was too strange for me. From the buildings, transportation to the culture in here, it is very different and modern from the country I used to live in. I love discovering new things, however, lack of information or reviews about a particular restaurant or hotel makes it impossible to venture in, as the Australian currency is much higher to the country I live in. I wonder if there is a website or application that helps travelers to get information and honest user reviews. A website that lets me know where I am, what’s around me and where I want to go most. That is the reason why I decided to make a tourism website for this project.</p>
+
+            <h5>Laura</h5>
+            <p>The motivation behind this project idea was driven by the experience I have seen my international student friends have. I have seen them struggle to navigate through Melbourne in general, and the experiences Melbourne has to offer them. They only seem to manage by having a local student from Melbourne help them to know the best restaurants, bars and fun things to do. That is why I felt that there needed to be a dedicated Melbourne Tourist app that provided information such as restaurants, bars and experiences for visitors to Melbourne. Although it was important to include interesting features such as ratings, reviews and the recognition feature to make it more interesting for the user, when exploring Melbourne. This app wouldn't just be useful for my International friends, but it would also be handy for new residents and more importantly, Tourists visiting Melbourne.</p>
+
+            <h5>Aswathy</h5>
+            <p>The tourism industries in and around Melbourne have created various apps and websites to keep up with the tourism boom that Melbourne was experiencing prior COVID-19. Though these apps have been made to help the tourists navigate through and enjoy Melbourne with ease, it doesn’t serve the purpose. The motivation behind MelLocal is to provide the tourists with an user friendly website/app that helps them navigate through Melbourne and its surroundings. The creators of the previous tourism websites haven’t looked through the eyes of the tourist to understand their needs. Melbourne has a vibrant street life and getting lost in between this is not hard as a tourist. Including features such as Image recognition will help them get a sense of location and confidence in exploring more places. The aim of MelLocal is to promote Melbourne tourism while also promoting the local businesses. The Business will get their separate log in as a business owner to publish their business. This will help the local businesses, post covid world which inturn helps the economy boom.</p>
+
+            <h5>Shanogeeth</h5>
+            <p>Tourism has a big demand around the world. Melbourne is one of the most amazing cities to experience the Australian culture along with some pleasing places to visit. Most of the international students are looking to visit places and experience the variety of food available in  Melbourne along with the culture for an affordable cost. But the majority of them ignore the opportunity due to the high expenses given by the existing tourism websites. By bringing MelLocal to the market we are mostly targeting the international students as well the tourists to navigate them to experience some best locations in Melbourne along with local restaurants and bars for an affordable cost. Apart from that , we are looking to promote some local businesses by advertising them on the website for tourists to energize themselves. </p>
+
+            <h5>Eliza</h5>
+            <p>Having worked in a commercial bus company I realised how much of Melbourne’s economy revolves around the tourism industry. This is a tough industry that has a lot of room for improvement when it comes to utilising tools to improve business processes. An application that improves visitors' experience of Melbourne would be a win/win for both tourists and Melbourne businesses. As well as this the extended feature of Image Recognition can help to serve as a platform for enriching people’s knowledge of Melbourne and its heritage buildings, parks and attractions. As the tourism industry is facing significant downturn, the reboot of the Melbourne visitor economy is a pertinent issue. I am excited to be a part of this project and explore these issues whilst simultaneously improving our technical skills</p>
+
+            <h3>Minimum Viable Features (MVF)</h3>
+
+            <h4>Review system (MVF1)</h4>
+            <p>5 star rating system and a comment box has been given to the customers, so that they can use to rate and comment on their experience that they endured during their visit to this location.</p>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p> Neil Watson is a customer who is willing to create a review for the visit so that he can share his experience by commenting and rating on the location he visited,whereas the other customers may consider visiting that particular location.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>Neil Watson logged in as a Customer</li>
+                            <li>He is on the 'Locations' page</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>Neil Watson clicks on the Review button and fills the form with the required information</li>
+                            <li>He clicks on the 'Proceed' button for the system to update his comment and rating on the location visited.</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>The system will validate the input.</li>
+                            <li>The system will add the review to the database</li>
+                            <li>The system displays the review and the ratings under the location visited</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Miranda Lyn is an Admin. She likes to view the customer reviews and develop the website and her business according to their suggestions and needs.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>Miranda Lyn logged in as an Admin</li>
+                            <li>She is on the customer reviews page</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>Miranda Lyn takes the plus points given by the customers to develop her business</li>
+                            <li>She upgrades the website according to customers expectations</li>
+                            <li>She replies to customers comments</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>The system update the changes made by Miranda Lyn</li>
+                            <li>The system will add the review to the database</li>
+                            <li>The system sends Mirenda Lyn’s replies to her respective customers through their email</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h5>Pros</h5>
+            <ul>
+                <li>The biggest advantage of positive customer reviews is that it elevates customer’s confidence towards the business</li>
+                <li>By creating a review system it helps the readers to know more about the products, services, or a specific location</li>
+                <li>It helps the company to work on customer feedback to improve the services and secure the company’s future</li>
+            </ul>
+
+            <h5>Cons</h5>
+            <ul>
+                <li>It is quite easy for anyone to post a fake review and get away with it. It is mostly done by competitors. These fake reviews can harm the reputation and the business sufficiently</li>
+                <li>Having reviews that are a year old can be hazardous. It will give the potential customers an impression that the business is outdated</li>
+            </ul>
+
+            <h4>Displaying the cost (MVF2)</h4>
+
+            <p>The website will gather an average cost price of the experience such as meal, drink or ticket prices so that the Tourists can plan their trip and get a brief idea about their visit.</p>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Miranda Lyn is an admin. She likes to update the cost for each of the packages and locations given in the website so that the Tourists can plan their trip and get a brief idea about their visit.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>Miranda Lyn logged in as an Admin</li>
+                            <li>She is on the locations and packages page</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>Miranda Lyn clicks on a specific location or a package to update the relevant cost</li>
+                            <li>She clicks on the ‘ add ‘ button for the system to add the cost</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>The system will add the cost for the relevant package or location </li>
+                            <li>The system displays the cost next to the location</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h5>Pros</h5>
+            <ul>
+                <li>By displaying the costs of a product or a package, it helps the users to choose the best possible option according to their budget</li>
+                <li>By listing out the prices for each product, it helps to allocate resources efficiently</li>
+            </ul>
+
+            <h5>Cons</h5>
+            <ul>
+                <li>The major disadvantage of the pricing system is that it prevents economically disadvantaged people from experiencing a product or service. When people cannot afford, they are denied access to those experiences</li>
+                <li>Competitors will have the access to modify their business by providing low quality products for a lower cost compared to our business</li>
+            </ul>
+
+            <h4>Businesses can advertise (MVF3)</h4>
+            <p>Local businesses in the Melbourne CBD area can advertise their business to tourists to visit. They can list what their business is and what they offer to customers.</p>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Harry Smith is a Businessman who likes to advertise his business to tourists so that they can go through the deals and offers to get a good experience.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>Harry Smith logged in as an Admin</li>
+                            <li>He is on the link to update the details of his business</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>He adds all the valid information for his business </li>
+                            <li>He clicks on the 'add' button for the system to add the information</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>The system will add the business informations to the database</li>
+                            <li>The system will display the relevant information on the promotions page</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Neil Watson is a customer who is interested in one of the business products advertised on the website recently.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>Neil Watson logged in as a Customer</li>
+                            <li>He is on the Home Page</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>Neil Watson navigates through the website</li>
+                            <li>He clicks on the preferred Business advertisement</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>The system updates Neil Watson by giving more information about the business</li>
+                            <li>The system highlights the location of the business in a unique color</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h5>Pros</h5>
+            <ul>
+                <li>It helps to develop our advertising Effectiveness</li>
+                <li>By advertising a local business to the market it helps to expand the business and increase sales</li>
+            </ul>
+
+            <h5>Cons</h5>
+            <ul>
+                <li>There's a possibility for the customers to ignore the advertisement. Customers are so used to seeing advertising on television, hearing audio commercials, and flipping through advertisements in magazines, where customers can avoid clicking banners</li>
+                <li>There can be technical viewing problems. Website downtime, lags in website or video loading and browser complications can reduce the number of times customers see online advertisements and how well they see them</li>
+            </ul>
+
+            <h4>Creation of profile account (MVF4)</h4>
+            <p>Tourists must create their own profile to access the experiences that businesses in Melbourne CBD offer and to be updated with promotions and deals.</p>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Neil Watson is a customer and would like to create an account to access the experience that businesses in Melbourne CBD offers and to be updated with promotions and deals the website offers</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>Neil Watson logged in as Customer</li>
+                            <li>He sees a button displayed on the right top corner to create an account</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>Neil Watson clicks on the button</li>
+                            <li>He adds all the valid information required</li>
+                            <li>He clicks on the 'proceed' button for the system to update the information </li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>The system stores the information in the database</li>
+                            <li>Neil Watson will have the access to experience the businesses in CBD</li>
+                            <li>He will get updated with deals</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h5>Pros</h5>
+            <ul>
+                <li>The users will be able to access all the contents and experiences provided by the website without any additional charges or restrictions</li>
+                <li>By storing the data it will ease website use over multiple visits</li>
+            </ul>
+
+            <h5>Cons</h5>
+            <ul>
+                <li>Personal information could be compromised by nefarious parties</li>
+                <li>Not every customer would like to create an account to register themselves</li>
+                <li>Users will not have the access to use the search bar unless they register with an account</li>
+            </ul>
+
+            <h4>Ability to filter through search results (MVF5)</h4>
+            <p>Users can use filters on the search bar to search specifically for a preferred experience such as a bar or restaurant. The price can also be filtered for a preferred price.</p>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Neil Watson would like to use filters on the search bar to search specifically for a preferred experience such as a bar or restaurant.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>Neil Watson logged in as Customer</li>
+                            <li>He can see the 'search' bar</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>Neil Watson click on search bar</li>
+                            <li>He can input text within the search bar and click the magnifying glass button</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>The system displays the recommended options with the cost to  Neil Watson</li>
+                            <li>Neil Watson will have the advantage to select the most preferred option to have a great experience</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h5>Pros</h5>
+            <ul>
+                <li>It provides multiple options to the customers depending on their input</li>
+                <li>It helps the users to find what they’re looking for quickly</li>
+            </ul>
+
+            <h5>Cons</h5>
+            <ul>
+                <li>By using this easy option, the users may be bypassing much of the main content and advertisements available on the website.</li>
+            </ul>
+
+            <h3>Extended Viable Features (EVF)</h3>
+
+            <h4>Image recognition (EVF1)</h4>
+
+            <p>The image recognition tool is going to be used for recognizing, analysing and interpreting images. The user interprets with the world around, using the image recognition tool. The camera of the device is used to recognize the location or the name of the monument. This interpretive technology engages the user with the world around them, making their trip much more easier and helpful.</p>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Miranda Lyn who is an exchange student at RMIT is very new to Melbourne. She sometimes has difficulty with distinguishing monuments and places around Melbourne. She uses the image recognition tool to recognise the places. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>Logged in as a user</li>
+                            <li>The device has access to camera</li>
+                            <li>The user can see the image recognition icon on the web page.</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>Miranda clicks on the image recognition camera icon</li>
+                            <li>Selects a focus point on the screen</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>The system shows a popup with the information of the selected monument or location</li>
+                            <li>Miranda can then read the information that is shown on the screen</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h5>Pros</h5>
+            <ul>
+                <li>Using the camera of the device, users can scan the monument or the location to understand what the history behind the place or monument is</li>
+                <li>The image recognition will be of great use when the user is lost. The user could use the camera on their device to recognize a close by building or monument to find their location</li>
+            </ul>
+
+            <h5>Cons</h5>
+            <ul>
+                <li>If the device camera has a low quality, it will be hard for the tool to recognise the image</li>
+                <li>If the user is standing far away or too close to the focused monument/building, it might not be clearly visible, hence giving incorrect results</li>
+                <li>Weather is another factor that can come in the way. A foggy or rainy weather can decrease the clarity of the image, in turn getting incorrect results</li>
+            </ul>
+
+            <h4>Weather Forecast (EVF2)</h4>
+
+            <p>A weather forecast service allows the user to plan their day with comfort. Each location is provided with its own weather service. The weather for each location is shown in the top right corner of the page with weather prediction for the next 4 days.</p>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Irish Tourist, Neil Watson and family with 2 kids, like to plan their day after checking the weather, so that they can plan their outfits and the location appropriately for them and the kids.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>Logged in as a user</li>
+                            <li>The device has an internet connection</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>Opens the MelLocal web page</li>
+                            <li>Neil Watson searches for a location</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>During harsh weather, a pop-up message will be shown on the front home page for the main city. The web page will also provide a suggested indoor location when raining</li>
+                            <li>The weather of the selected location will be defaultly shown on the top right corner of the page with an accompanied weather icon</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h5>Pros</h5>
+
+            <ul>
+                <li>With 4 days of weather forecasting provided, it is easier for a family or any type of tourist to plan their day ahead</li>
+            </ul>
+
+            <h5>Cons</h5>
+
+            <ul>
+                <li>With bad internet, the weather forecast will not work, a stable internet connection is required</li>
+            </ul>
+
+            <h4>Web app (EVF3)</h4>
+
+            <p>Though a website can be accessed with ease and is compatible with all devices across the board, and updating a website is easy and quick, converting this website into a mobile app allows ease of access to the users. As studies show, most users prefer having a ready to access application on their phone over a website.</p>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Neil Watson is a tourist who would like to give reviews to the places he visits and also check for his next destination.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>He is logged in as a customer</li>
+                            <li>Has the app installed</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>The app icon is selected</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>Takes the user directly to the home page</li>
+                            <li>The user can then navigate through the app, exactly like how they used to do it on the web page</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Harry Smith is a business owner, who constantly updates his business on MelLocal.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>He is logged in as a business owner</li>
+                            <li>Has the app installed</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>The app icon is selected</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>Takes the user directly to the home page</li>
+                            <li>The user can then navigate through the app, exactly like how they used to do it on the web page</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h5>Pros</h5>
+            <ul>
+                <li>Ease of access is a huge plus when it comes to an app</li>
+                <li>It provides a better user experience.</li>
+            </ul>
+
+            <h5>Cons</h5>
+            <ul>
+                <li>A web app may have a limited navigation, and users who are used to the web version of MelLocal may not know where to find features with the new interface</li>
+            </ul>
+
+            <h4>Change language (EVF4)</h4>
+
+            <p>With tourists visiting from all around the world, connecting to them through their language brings a sense of comfort. The language feature also widens the audience of the website, inreturn allowing more business to the locals that have posted their website through this application.</p>
+
+            <table>
+                <tr>
+                    <td>
+                        <h5>User Story:</h5>
+                        <p>Miranda Lyn is an exchange student that just came to Melbourne, and would like to change languages to better understand the places.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Acceptance Criteria</h5>
+
+                        <h5 class="table-heading">Given</h5>
+                        <ul>
+                            <li>The user is logged in</li>
+                            <li>Can see the switch language icon</li>
+                        </ul>
+
+                        <h5 class="table-heading">When</h5>
+                        <ul>
+                            <li>Clicks on the Change language icon</li>
+                            <li>Chooses the preferred language</li>
+                        </ul>
+
+                        <h5 class="table-heading">Then</h5>
+                        <ul>
+                            <li>The interface of the website changes to the preferred language</li>
+                            <li>The image recognition tool also provides its information on the preferred language</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h5>Pros</h5>
+            <ul>
+                <li>The potential users of the app will increase</li>
+                <li>Users will find comfort in travelling around Melbourne and inturn increasing Melbourne’s economy</li>
+            </ul>
+
+            <h5>Cons</h5>
+            <ul>
+                <li>Not all languages can be included. This will have a psychological impact on the user in terms of inclusiveness</li>
+            </ul>
+
+            <h3>Project Justification</h3>
+
         </div>
         
     </div>
