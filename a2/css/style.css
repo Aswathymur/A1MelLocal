@@ -1,0 +1,262 @@
+
+/* Main Content */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    z-index: 2;
+    box-shadow: 0px 7px 20px -10px rgba(0,0,0,0.75);
+    height: 55pt;
+    width: 100%;
+    background-color: #ffb300;
+}
+
+.logo {
+    background: transparent !important;
+    width: 42pt;
+    height: 40pt;
+    overflow: hidden;
+    margin-top: 10pt;
+    margin-left: 50pt;
+    display: inline-block;
+}
+
+.content {
+    padding: 10vw 20vw 10vw 20vw;
+}
+
+/* Home */
+.banner {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+    .banner img {
+        height: auto;
+        width: 100%
+    }
+
+    .banner h1 {
+        font-size: 3em;
+        color: white;
+        text-shadow: 2px 2px 10px black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .banner p {
+        font-size: 1.3em;
+        color: white;
+        text-shadow: 2px 2px 3px black;
+        position: absolute;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+nav ul {
+    float: right;
+    margin-right: 40pt;
+}
+
+nav ul {
+    padding-right: 30px;
+    margin: 0 0 0 150pt;
+    list-style: none;
+}
+
+nav li {
+    float: left;
+    display: inline-block;
+    margin: 0 8pt;
+    line-height: 55pt;
+}
+
+    nav li:hover {
+        background-color: #d83738;
+    }
+
+nav a {
+    color: white;
+    font-size: 13pt;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 7pt 10pt;
+    width: 100pt;
+    font-family: sans-serif;
+}
+
+
+/* The team section */
+.wrapper {
+    position: absolute;
+    z-index: 2;
+    box-shadow: 0px -7px 20px -10px rgba(0,0,0,0.75);
+    padding-top: 30px;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    background: #2b2b2b;
+}
+
+    .wrapper h1 {
+        text-shadow: 3px 3px #ffb300;
+        font-size: 40px;
+        margin-bottom: 80px;
+        text-align: center;
+        color: #fff;
+    }
+
+.team {
+    display: flex;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .team .team_member {
+        background: #fff;
+        margin: 5px;
+        margin-bottom: 50px;
+        width: 300px;
+        padding: 20px;
+        line-height: 20px;
+        color: #8e8b8b;
+        position: relative;
+    }
+
+        .team .team_member h3 {
+            color: #e43a3b;
+            font-size: 26px;
+            margin-top: 50px;
+        }
+
+        .team .team_member p {
+            text-align: left;
+        }
+
+            .team .team_member p.mail {
+                color: rgb(106, 44, 206);
+                font-size: 12px;
+                margin: 12px 0;
+                text-align: center;
+            }
+
+        .team .team_member .team_img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+        }
+
+            .team .team_member .team_img img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+/* What */
+.what > * {
+    margin-top: 20px;
+    list-style-type: circle;
+}
+
+.what td {
+    border: 1px solid #000000;
+}
+
+.what table {
+    width: 100%;
+}
+
+.what td {
+    padding: 10px 10px 10px 50px;
+}
+
+.what li {
+    padding-top: 5px;
+}
+
+.what .table-heading {
+    padding-top: 20px;
+}
+
+.workload-table {
+    border: 1px solid #000000;
+}
+
+    .workload-table td {
+        padding: 15px;
+    }
+
+/* How */
+.how > * {
+    margin-top: 20px;
+    list-style-type: circle;
+}
+
+/* When */
+.when > * {
+    margin-top: 20px;
+    list-style-type: circle;
+}
+
+.when td {
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.schedule-table td:last-child {
+    text-align: center;
+}
+
+
+/* Group Contract */
+.group-contract > * {
+    margin-top: 20px;
+    list-style-type: circle;
+}
+
+.group-contract li {
+    margin-top: 10px;
+}
+
+.group-contract td {
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.group-contract th {
+    text-align: left;
+}
+
+.members-column {
+    min-width: 500px;
+}
+
+.individual-agreement {
+    padding: 10px;
+}
