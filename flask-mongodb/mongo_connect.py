@@ -5,46 +5,59 @@
 from flask import Flask
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
+from mongoengine import *
 
 # Configure the Flask application to connect with the MongoDB server
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/SomeDatabase"
-app.config['MONGO_DBNAME'] = 'SomeCollection'
-app.config['SECRET_KEY'] = 'secret_key'
+app.config["MONGO_URI"] 	= "mongodb://localhost:27017/mellocal"
+app.config['MONGO_DBNAME'] 	= 'mellocal'
 
-# Connect to MongoDB using Flask's PyMongo wrapper
-mongo = PyMongo(app)
-db = mongo.db
-col = mongo.db["Some Collection"]
-print ("MongoDB Database:", mongo.db)
+# super secret key - used for generating cookies for users across sessions
+app.config['SECRET_KEY'] 	= '!?~?k????<7g?2'
+
+# create a connection to MongoDB (default localhost, port: 27017)
+client = MongoClient()
+
+# create the database - if it doesn't exist will create it
+db = client['mellocal']
+
+# connect to newly created mellocal database with mongoengine
+connect('mellocal', host='localhost', port=27017)
+
+class Category(EmbeddedDocument):
+	name 		= StringField()
+
+class Business(EmbeddedDocument):
+	name		= StringField()
+	short_url	= StringField()
+	description = StringField()
+	logo_url	= StringField()
+	website		= StringField()
+	location	= PointField(auto_index=True)
+	avg_spend	= IntField()
+	category 	= EmbeddedDocumentField(Category)
+
+class Favourite(EmbeddedDocument):
+	business 	= EmbeddedDocumentField(Business)
+
+class Review(EmbeddedDocument):
+	business 	= EmbeddedDocumentField(Business)
+
+class User(Document):
+	email 		= EmailField()
+	name 		= StringField()
+	username 	= StringField()
+	password	= StringField()
+	favourites 	= ListField(EmbeddedDocumentField(Favourite))
+	reviews 	= ListField(EmbeddedDocumentField(Review))
+	business 	= EmbeddedDocumentField(Business)
 
 # Declare an app function that will return some HTML
 @app.route("/")
-def connect_mongo():
+def hello_world():
 
-	# Setup the webpage for app's frontend
-	html_str = '''
-	<!DOCTYPE html>
-	<html lang="en">
-	'''
-
-	# Have Flask return some MongoDB information
-	html_str = html_str + "# Object Rocket Flask App Tutorial"
-	html_str += '<br>'
-
-	html_str = html_str + "## mongo.cx client instance:" + str(mongo.cx)
-	html_str += '<br>'
-
-	html_str = html_str + "### " + str(db)
-	html_str += '<br>'  
-
-	html_str = html_str + "### " + str(col)
-	html_str += '<br>' 
-
-	# Get a MongoDB document using PyMongo's find_one() method
-	#html_str = html_str + str(col.find_one()) 
-
-	html_str += "</html>"
+	# Declare a string for app's frontend
+	html_str = "hello world"
 
 	return html_str
 
