@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+
+<html>
+<head>
+	<title>Businesses</title> 
+</head> 
+
+	<nav>
+		<a href="/users">Users</a>
+		<a href="/businesses">Businesses</a>
+	</nav>
+
+	<body>
+
+		<h3>Loop through Business Objects</h3> 
+		
+		<!-- Loop through businesses -->
+		{%for i in range(0, len)%} 
+		<ul style="list-style: none"> 
+			<li>Name: {{ Businesses[i].name }}</li>
+			<li>Short URL: {{ Businesses[i].short_url }}</li>
+			<li>Description: {{ Businesses[i].description }}</li> 
+			<li>Logo URL: {{ Businesses[i].logo_url }}</li> 
+			<li>Website: {{ Businesses[i].website }}</li> 
+			<li>Location: {{ Businesses[i].location }}</li> 
+			<li>Average Spend: ${{ Businesses[i].avg_spend }}</li> 
+			<li>Category: {{ Businesses[i].category.name }}</li> 
+		</ul> 
+		{%endfor%} 
+		
+		
+	
+	</body>
+</html> 

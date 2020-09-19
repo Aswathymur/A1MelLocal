@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+
+<html> 
+<head> 
+	<title>Users</title> 
+</head>
+
+	<nav>
+		<a href="/users">Users</a>
+		<a href="/businesses">Businesses</a>
+	</nav>
+
+	<body>
+
+		<h3>Loop through User Objects</h3>  
+	
+		<!-- Loop through users -->
+		{%for i in range(0, len)%} 
+		<ul style="list-style: none"> 
+			<li>Email: {{Users[i].email }}</li>
+			<li>First Name: {{ Users[i].first_name }}</li>
+			<li>Last Name: {{ Users[i].last_name }}</li>
+			<li>Username: {{ Users[i].username }}</li>
+			<li>Password: {{ Users[i].password }}</li>
+			<li>Favourites: {{ Users[i].favourites }}</li>
+			<li>Reviews: {{ Users[i].reviews }}</li>
+			<li>Business Name: {{ Users[i].name }}</li> 
+		</ul> 
+		{%endfor%} 
+		
+		
+	
+	</body> 
+</html> 
