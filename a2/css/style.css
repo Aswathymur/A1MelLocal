@@ -132,17 +132,16 @@ table.plan th {
     background-color: #FFB74D;
 }
 
-.evf td {
-    color: purple;
-    border-bottom: 2px solid black;
-}
-
 .group tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
 .individual tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+tr.evfmvf td {
+    text-align: center;
 }
 
 table.individual {
