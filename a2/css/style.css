@@ -115,6 +115,10 @@ img.design {
 
 }
 
+.advertise > * {
+    padding: 15px 50px;
+}
+
 /* Plan */
 
 table.plan {
