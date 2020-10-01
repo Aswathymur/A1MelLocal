@@ -1,6 +1,8 @@
 click==7.1.2
+email_validator==1.1.1
 Flask==1.1.2
 Flask-PyMongo==2.3.0
+flask_mongoengine==0.9.5
 itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1

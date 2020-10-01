@@ -1,0 +1,126 @@
+/* Content */
+#content {
+	width: 100%;
+}
+
+/* Map */
+.map-container {
+	padding: 0;
+}
+
+.map-row {
+	height: calc(100vh);
+}
+
+.map-row > .col-1 {
+	background-color: #15576E;
+}
+
+/* Side Navigation */
+.map-area:nth-child(1) {
+	background-color: #15576E;
+}
+
+.sidenav-container {
+	padding-top: calc(30vh);
+}
+
+.sidenav-container > svg {
+	margin-bottom: 40px; 
+}
+
+.sidenav-container > svg:hover {
+	background-color: #0C4356;
+	outline-style: solid;
+	outline-width: 15px;
+	outline-color: #0C4356;
+}
+
+/* Categories Navigation */
+.activities > h2, .shopping > h2, .food > h2 {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 17px;
+	line-height: 20px;
+	/* identical to box height */
+
+
+	color: #868686;
+}
+
+.activities {
+	background-color: pink!important;
+}
+
+.categories > h1:first-child {
+	padding-top: 40px;
+}
+.map-area:nth-child(2) {
+	background-color: #FFECD1;
+}
+
+.thingsdo {
+	margin-top: 50px;
+	padding: 10px;
+}
+
+.thingsdo > .row {
+	margin-top: 7px;
+}
+
+.catheading {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 16px;
+
+	color: #B9B9B9;
+}
+
+.subheading {
+	padding-top: 5px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 17px;
+	line-height: 20px;
+	/* identical to box height */
+
+	color: #868686;
+}
+
+.thingssee {
+	padding: 10px;
+}
+.thingssee > .row {
+	margin-top: 7px;
+}
+.essentials {
+	padding: 10px;
+}
+.essentials > .row {
+	margin-top: 7px;
+}
+
+
+/* Map Area */
+.map-area:nth-child(3) {
+	background-color: #FFFFFF;
+}
+
+.map-content {
+	padding: 0;
+}
+
+#view-side {
+	width: 100% !important;
+	height: 100% !important;
+	margin: 0;
+}
+.infobox {
+	height: 400px;
+	background-color: purple;
+}
+

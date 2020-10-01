@@ -1,0 +1,41 @@
+/* Content */
+#content {
+	width: 100%;
+}
+
+
+
+/* Map */
+.map-container {
+	padding: 0;
+
+}
+
+.map-row {
+	height: calc(100vh);
+}
+
+.map-row > .col-1 {
+	background-color: #15576E;
+}
+
+/* Side Navigation */
+.map-area:nth-child(1) {
+	background-color: #15576E;
+}
+
+div.sidenav-container {
+	padding-top: 400px;
+	background-color: pink;
+}
+
+/* Categories Navaigation */
+.map-area:nth-child(2) {
+	background-color: #FFECD1;
+}
+
+/* Map Area */
+.map-area:nth-child(3) {
+	background-color: #FFFFFF;
+}
+
