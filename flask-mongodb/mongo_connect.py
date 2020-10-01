@@ -16,7 +16,7 @@ from mongoengine import *
 app = Flask(__name__)
 
 # you can set key as config
-app.config['GOOGLEMAPS_KEY'] = "AIzaSyCv_3pqivLISWN2zh5gmxDo44ydWIL7ppo"	
+app.config['GOOGLEMAPS_KEY'] = ""	
 
 GoogleMaps(app)
 
