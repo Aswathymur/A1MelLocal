@@ -16,7 +16,7 @@ from mongoengine import *
 app = Flask(__name__)
 
 # you can set key as config
-app.config['GOOGLEMAPS_KEY'] = ""	
+app.config['GOOGLEMAPS_KEY'] = "AIzaSyBzd9Jh2KhLQnEntR9CaXPtz0aoIUpwkE4"	
 
 GoogleMaps(app)
 
@@ -77,7 +77,7 @@ class User(Document):
 	business 	= ReferenceField(Business)
 
 
-def getMarkersFromBusinessObjects(businesses):
+def getMarkers(businesses, location = False):
 	markers = []
 	for business in businesses:
 		marker 		      = {}
@@ -86,6 +86,8 @@ def getMarkersFromBusinessObjects(businesses):
 		marker['lat']     = float(business.latitude)
 		marker['lng']     = float(business.longitude)
 		markers.append(marker)
+	if location != False:
+		markers.append(location)
 	return markers
 
 
@@ -138,16 +140,41 @@ def get_businesses():
 def get_base():
 	return render_template("base.html")
 
+@app.route("/map/location")
+def get_map_location():
+	return render_template('map_location.html')
+
+
 # Flask returning a Map
 @app.route("/map")
 def get_map():
+
+	# defaults
+	lat = -37.812365
+	lng = 144.962338
+
+	# request args
+	if 'lat' in request.args:
+		lat = float(request.args['lat'])
+	if 'lng' in request.args:
+		lng = float(request.args['lng'])
+
+	# location
+	location = {}
+	location['lat'] = lat
+	location['lng'] = lng
+
+	# map
 	mymap = Map(
 		identifier = "view-side",
-		lat = -37.812365,
-		lng = 144.962338,
-		markers = getMarkersFromBusinessObjects(Business.objects)
+		lat = lat,
+		lng = lng,
+		markers = getMarkers(Business.objects, location)
 	)
+
+	# render
 	return render_template('map.html', mymap=mymap)
+
 
 # Search 
 @app.route("/search", methods=['GET'])
@@ -169,7 +196,7 @@ def search_string():
 		identifier = "view-side",
 		lat = -37.812365,
 		lng = 144.962338,
-		markers = getMarkersFromBusinessObjects(businesses),
+		markers = getMarkers(businesses),
 		fit_markers_to_bounds = True
 	)
 

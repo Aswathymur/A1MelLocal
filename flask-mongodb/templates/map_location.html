@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { background-color: #336699; color: white; }
+    </style>
+{% endblock %}
+{% block content %}
+	<script>
+
+		// position.
+		navigator.geolocation.watchPosition(
+
+			// success.
+			function(position) {
+				latitude  = position['coords']['latitude'];
+				longitude = position['coords']['longitude'];
+				console.log('Latitude:  ' + latitude);
+				console.log('Longitude: ' + longitude);
+		     	window.location = "/map?lat=" + latitude + "&lng=" + longitude;	
+		  	},
+
+		  	// error.
+		  	function(error) {
+				console.error("Geolocation is not supported by this browser.");
+				window.location = "/map";	
+		  	}
+
+		);
+
+	</script>
+{% endblock %}
