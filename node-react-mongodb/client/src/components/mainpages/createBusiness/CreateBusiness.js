@@ -6,14 +6,15 @@ import {useHistory, useParams} from 'react-router-dom'
 
 const initialState = {
     business_id: '',
-    title: '',
-    address: '',
-    price: 0,
-    description: '',
-    content: '',
+    title: 'title',
+    address: 'address',
+    price: 100,
+    description: '123 Fake Street',
+    content: 'Content',
     category: '',
-    lat: '',
-    lng: '',
+    lat: '123',
+    lng: '123',
+    user: '',
     _id: ''
 }
 
@@ -21,6 +22,7 @@ function CreateBusiness() {
     const state = useContext(GlobalState)
     const [business, setBusiness] = useState(initialState)
     const [categories] = state.categoriesAPI.categories
+    const [user] = state.userAPI.user
     const [images, setImages] = useState(false)
     const [menu, setMenu] = useState(false)
     const [loading, setLoading] = useState(false)
@@ -151,6 +153,9 @@ function CreateBusiness() {
         try {
             if (!isAdmin) return alert("You're not an admin")
             if (!images/!menu) return alert("No Image Upload")
+
+	    business.user = user._id
+		console.log(business)
 
             if(onEdit){
                 await axios.put(`/api/businesses/${business._id}`, {...business, images, menu},{

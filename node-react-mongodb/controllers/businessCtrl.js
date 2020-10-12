@@ -84,15 +84,18 @@ const businessCtrl = {
     },
     createBusiness: async(req, res) =>{
         try {
-            const {business_id, title, price, address, description, content, images, category, menu, lat, lng} = req.body;
+            const {business_id, title, price, address, description, content, images, category, menu, lat, lng, user} = req.body;
             if(!images/ !menu) return res.status(400).json({msg: "No image upload"})
+
+		console.log("ANYTHING AT ALL")
+		console.log(req.body)
 
             const business = await Businesses.findOne({business_id})
             if(business)
                 return res.status(400).json({msg:"This business already exists"})
 
             const newBusiness = new Businesses({
-                business_id, title: title.toLowerCase(), price, address, description, content, images, category, menu, lat, lng
+                business_id, title: title.toLowerCase(), price, address, description, content, images, category, menu, lat, lng, user
             })
 
             await newBusiness.save()
