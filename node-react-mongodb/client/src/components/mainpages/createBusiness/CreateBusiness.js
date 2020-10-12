@@ -155,7 +155,6 @@ function CreateBusiness() {
             if (!images/!menu) return alert("No Image Upload")
 
 	    business.user = user._id
-		console.log(business)
 
             if(onEdit){
                 await axios.put(`/api/businesses/${business._id}`, {...business, images, menu},{
