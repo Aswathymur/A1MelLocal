@@ -12,6 +12,8 @@ router.get('/logout', userCtrl.logout)
 
 router.get('/refresh_token', userCtrl.refreshToken)
 
+router.get('/info', userCtrl.getUserInfo)
+
 router.get('/infor', auth, userCtrl.getUser)
 
 router.patch('/addfavourite', auth, userCtrl.addFavourite)

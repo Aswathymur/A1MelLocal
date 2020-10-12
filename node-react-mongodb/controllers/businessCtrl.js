@@ -67,10 +67,17 @@ const businessCtrl = {
     },
     getMyBusinesses: async(req, res) =>{
         try {
+
+	    const userid = req.cookies.userid
+
+	    req.query['user'] = userid
+
             const features = new APIfeatures(Businesses.find(), req.query)
             .filtering().sorting().paginating()
 
             const businesses = await features.query
+
+	    console.log(req.query)
 
             res.json({
                 status: 'success',

@@ -72,6 +72,12 @@ const userCtrl = {
             const accesstoken = createAccessToken({ id: user._id })
             const refreshtoken = createRefreshToken({ id: user._id })
 
+	    res.cookie('userid', user._id, {
+                httpOnly: true,
+                path: '/',
+                maxAge: 7*24*60*60*1000 //7d
+	    })
+
             res.cookie('refreshtoken', refreshtoken, {
                 httpOnly: true,
                 path: '/user/refresh_token',
@@ -120,6 +126,16 @@ const userCtrl = {
             const user = await UserModel.findById(req.user.id).select('-password')
             if(!user) return res.status(400).json({ msg:"User does not exist."})
 
+            res.json(user)
+        } catch (err) {
+            return res.status(500).json({ msg: err.message })
+        }
+    },
+    getUserInfo: async (req, res) =>{
+        try {
+            const userid = req.cookies.userid;
+            const user = await UserModel.findById(userid).select('-password')
+		console.log(user)
             res.json(user)
         } catch (err) {
             return res.status(500).json({ msg: err.message })

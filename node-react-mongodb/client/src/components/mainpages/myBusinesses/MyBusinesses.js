@@ -8,7 +8,7 @@ import LoadMore from './LoadMore'
 
 function MyBusinesses() {
     const state = useContext(GlobalState)
-    const [businesses, setBusinesses] = state.businessesAPI.businesses
+    const [businesses, setBusinesses] = state.myBusinessesAPI.businesses
     const [isAdmin] = state.userAPI.isAdmin
     const [isLogged] = state.userAPI.isLogged
     const [token] = state.token

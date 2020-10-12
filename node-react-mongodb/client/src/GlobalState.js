@@ -17,9 +17,7 @@ export const DataProvider = ({children}) =>{
         if(firstLogin){
             const refreshToken = async () =>{
                 const res = await axios.get('/user/refresh_token')
-        
                 setToken(res.data.accesstoken)
-    
                 setTimeout(() =>{
                     refreshToken()
                 }, 10 * 60 * 1000)
@@ -31,6 +29,7 @@ export const DataProvider = ({children}) =>{
     const state = {
         token: [token, setToken],
         businessesAPI: BusinessesAPI(),
+	myBusinessesAPI: MyBusinessesAPI(),
         userAPI: UserAPI(token),
         categoriesAPI: CategoriesAPI()
     }

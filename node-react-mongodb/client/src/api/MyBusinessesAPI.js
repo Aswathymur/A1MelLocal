@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import axios from 'axios'
 
 function MyBusinessesAPI() {
@@ -13,7 +13,7 @@ function MyBusinessesAPI() {
 
         useEffect(() =>{
             const getBusinesses = async () => {
-                const res = await axios.get(`/api/businesses?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)
+                const res = await axios.get(`/api/my_businesses?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)
                 setBusinesses(res.data.businesses)
                 setResult(res.data.result)
             }
