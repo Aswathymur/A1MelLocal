@@ -29,7 +29,6 @@ function Header() {
         return (
             <>
                 <Link to="/create_business">Add Business</Link>
-                <Link to="/category">Add Category</Link>
                 <Link to='/my_businesses'>My Businesses</Link>
             </>
         )

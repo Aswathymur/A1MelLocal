@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
 import { GlobalState } from '../../../GlobalState'
 import Loading from '../utils/loading/Loading'
-import {useHistory, useParams} from 'react-router-dom'
+import { Link, useHistory, useParams } from 'react-router-dom'
 
 const initialState = {
     business_id: '',
@@ -262,6 +262,7 @@ function CreateBusiness() {
                             ))
                         }
                     </select>
+	            <Link to="/category">Add Category</Link>
                 </div>
 
                 <button type="submit">{onEdit? "Update" : "Create"}</button>
