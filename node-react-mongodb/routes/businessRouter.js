@@ -2,6 +2,10 @@ const router = require('express').Router()
 const businessCtrl = require('../controllers/businessCtrl')
 
 
+router.route('/my_businesses')
+    .get(businessCtrl.getMyBusinesses)
+
+
 router.route('/businesses')
     .get(businessCtrl.getBusinesses)
     .post(businessCtrl.createBusiness)

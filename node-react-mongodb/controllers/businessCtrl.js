@@ -65,6 +65,23 @@ const businessCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    getMyBusinesses: async(req, res) =>{
+        try {
+            const features = new APIfeatures(Businesses.find(), req.query)
+            .filtering().sorting().paginating()
+
+            const businesses = await features.query
+
+            res.json({
+                status: 'success',
+                result: businesses.length,
+                businesses: businesses
+            })
+
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
     createBusiness: async(req, res) =>{
         try {
             const {business_id, title, price, address, description, content, images, category, menu, lat, lng} = req.body;
