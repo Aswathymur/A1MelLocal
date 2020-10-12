@@ -1,13 +1,15 @@
-# mellocal
+## Project : MelLocal : Node React MongoDB
 
 
 ## Environment
+  
 This application assumes a functional MongoDB database installation.  
 The address of this instance can be configured using the .env file.  
 See the Installation section below for more information.  
   
   
 ## Installation
+  
 Clone repository.  
 ``git clone https://github.com/Aswathymur/A1MelLocal.git MelLocal``  
   
