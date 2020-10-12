@@ -38,6 +38,8 @@ db.drop_database('mellocal')
 
 class Category(EmbeddedDocument):
 	name 		= StringField()
+	subcategory	= StringField()
+	icon		= StringField()
 
 class Business(Document):
 	name		= StringField()
@@ -92,6 +94,7 @@ def getMarkers(businesses, location = False):
 
 
 # Add some business categories
+fun 			= Category(name='Fun & Activities', subcategory='Things to See', icon='mood')
 cafe 			= Category(name='cafe')
 restaurant 		= Category(name='restaurant')
 bar 			= Category(name='bar')
