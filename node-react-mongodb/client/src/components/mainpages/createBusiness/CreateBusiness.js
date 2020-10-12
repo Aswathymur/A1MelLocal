@@ -154,7 +154,8 @@ function CreateBusiness() {
             if (!isAdmin) return alert("You're not an admin")
             if (!images/!menu) return alert("No Image Upload")
 
-	    business.user = user._id
+	    business.business_id = Math.floor(Math.random() * 1000000000000)
+	    business.user        = user._id
 
             if(onEdit){
                 await axios.put(`/api/businesses/${business._id}`, {...business, images, menu},{
@@ -206,11 +207,6 @@ function CreateBusiness() {
 
             </div>
             <form onSubmit={handleSubmit}>
-                <div className="row">
-                    <label htmlFor="business_id">Business ID</label>
-                    <input type="text" name="business_id" id="business_id" required
-                        value={business.business_id} onChange={handleChangeInput} disabled={onEdit}/>
-                </div>
 
                 <div className="row">
                     <label htmlFor="title">Location Name</label>
