@@ -1,7 +1,7 @@
 import React, {createContext, useState, useEffect} from 'react'
 import BusinessesAPI from './api/BusinessesAPI'
-import UserAPI from './api/UserAPI'
 import CategoriesAPI from './api/CategoriesAPI'
+import UserAPI from './api/UserAPI'
 
 import axios from 'axios'
 

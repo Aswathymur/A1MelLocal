@@ -21,6 +21,7 @@ app.use('/user', require('./routes/userRouter'))
 app.use('/api', require('./routes/categoryRouter'))
 app.use('/api', require('./routes/upload'))
 app.use('/api', require('./routes/businessRouter'))
+app.use('/api', require('./routes/mapRouter'))
 
 
 //Connect to mongodb

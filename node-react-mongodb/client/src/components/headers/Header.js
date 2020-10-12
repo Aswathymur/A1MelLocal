@@ -28,8 +28,9 @@ function Header() {
     const adminRouter = () => {
         return (
             <>
-                <Link to="/create_business">Add Location</Link>
-                <Link to="/category">Category</Link>
+                <Link to="/create_business">Add Business</Link>
+                <Link to="/category">Add Category</Link>
+                <Link to='/my_businesses'>My Businesses</Link>
             </>
         )
     }
@@ -42,26 +43,26 @@ function Header() {
         )
     }
 
+    const loggedOutRouter = () => {
+	return (
+	    <>
+		<Link to='/login'>Login/ Register</Link>
+	    </>
+	)
+    }
+
     return (
         <header>
             <Navbar className='justify-content-end' activeKey='/'>
                 <Navbar.Brand href='/'>{isAdmin ? <img src={Logo} alt='' width='80' /> : <img src={Logo} alt='' width='80' />}</Navbar.Brand>
                 <Nav.Item>
-                {
-                  isLogged && <Link to='/map'>Map</Link> 
-                }
-                </Nav.Item>
-
-                <Nav.Item>
                 {isAdmin && adminRouter()}
-                {
-                    isLogged ? loggedRouter() : <Link to='/login'>Login/ Register</Link>
-                }
+                {isLogged ? loggedRouter() : loggedOutRouter()}
                 </Nav.Item>
                 <Nav.Item>
                 {
                 isAdmin ? ''
-                    : <div className='favourite-icon'>
+                    : isLogged && <div className='favourite-icon'>
                         <span>{favourite.length}</span>
                         <Link to='/favourite'>
                             <img src={Favourite} alt='' width='30' />
