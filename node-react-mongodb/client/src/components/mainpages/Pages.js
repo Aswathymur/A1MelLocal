@@ -7,7 +7,6 @@ import Register from './auth/Register'
 import Favourite from './favourite/Favourite'
 import Categories from './categories/Categories'
 import CreateBusiness from './createBusiness/CreateBusiness'
-import Business from './business/Business'
 import Map from './map/Map'
 import NotFound from './utils/not_found/NotFound'
 
@@ -25,20 +24,13 @@ function Pages() {
             <Switch>
                 <Route path="/" exact component={Businesses} />
                 <Route path="/detail/:id" exact component={DetailBusiness} />
-
                 <Route path="/login" exact component={isLogged ? NotFound : Login} />
                 <Route path="/register" exact component={isLogged ? NotFound : Register} />
-
                 <Route path="/category" exact component={isAdmin ? Categories : NotFound} />
                 <Route path="/create_business" exact component={isAdmin ? CreateBusiness : NotFound} />
                 <Route path="/edit_business/:id" exact component={isAdmin ? CreateBusiness : NotFound} />
-
-                <Route path="/business" exact component={isAdmin ? Business : NotFound } />
-
                 <Route path="/favourite" exact component={Favourite} />
-
                 <Route path="/map" exact component={Map} />
-
                 <Route path="*" exact component={NotFound} />
             </Switch>
         </div>
