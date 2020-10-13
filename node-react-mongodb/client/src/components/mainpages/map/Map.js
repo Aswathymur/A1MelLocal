@@ -12,6 +12,9 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+// Import icon
+import FlagIcon from './icon/Flag.png'
+
 // import "@reach/combobox/style.css"
 
 const libraries = ["places"];
@@ -66,9 +69,14 @@ export default function Map() {
             {
               businesses.map(item => {
                 return (
-                  <Marker key={item.title}
+                  <Marker
+                    key={item.title}
                     position={{ lat: item.lat, lng: item.lng }}
-                    onClick={() => onSelect(item)} />
+                    onClick={() => onSelect(item)} 
+                    icon={{
+                        url: FlagIcon
+                    }}
+                  />
                 )
               })
             }
