@@ -41,12 +41,9 @@ function Register() {
                 <input type="password" name="password" required autoComplete="on" 
                 placeholder="Password" value={user.password} onChange={onChangeInput} />
 
-                <p>Business</p>
-                <input type="checkbox" name="role"  value="1" onChange={onChangeInput} />
-
                 <div className="row">
                     <button type="submit">Submit</button>
-                    <Link to="/login">Already have account ></Link>
+                    <Link to="/login">Already have account> </Link>
                 </div>
             </form>
         </div>

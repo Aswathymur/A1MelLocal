@@ -2,19 +2,18 @@ import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
 import { GlobalState } from '../../../GlobalState'
 import Loading from '../utils/loading/Loading'
-import { Link, useHistory, useParams } from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 
 const initialState = {
     business_id: '',
-    title: 'Title',
-    address: '24 Example Avenue',
-    price: 100,
-    description: 'An example business description.',
-    content: 'Content.',
+    title: '',
+    address: '',
+    price: 0,
+    description: '',
+    content: '',
     category: '',
-    lat: '-37.8136',
-    lng: '144.9631',
-    user: '',
+    lat: '',
+    lng: '',
     _id: ''
 }
 
@@ -22,7 +21,6 @@ function CreateBusiness() {
     const state = useContext(GlobalState)
     const [business, setBusiness] = useState(initialState)
     const [categories] = state.categoriesAPI.categories
-    const [user] = state.userAPI.user
     const [images, setImages] = useState(false)
     const [menu, setMenu] = useState(false)
     const [loading, setLoading] = useState(false)
@@ -154,9 +152,6 @@ function CreateBusiness() {
             if (!isAdmin) return alert("You're not an admin")
             if (!images/!menu) return alert("No Image Upload")
 
-	    business.business_id = Math.floor(Math.random() * 1000000000000)
-	    business.user        = user._id
-
             if(onEdit){
                 await axios.put(`/api/businesses/${business._id}`, {...business, images, menu},{
                     headers: {Authorization: token}
@@ -207,9 +202,14 @@ function CreateBusiness() {
 
             </div>
             <form onSubmit={handleSubmit}>
+                <div className="row">
+                    <label htmlFor="business_id">Business ID</label>
+                    <input type="text" name="business_id" id="business_id" required
+                        value={business.business_id} onChange={handleChangeInput} disabled={onEdit}/>
+                </div>
 
                 <div className="row">
-                    <label htmlFor="title">Location Name</label>
+                    <label htmlFor="title">Title</label>
                     <input type="text" name="title" id="title" required
                         value={business.title} onChange={handleChangeInput}/>
                 </div>
@@ -262,7 +262,6 @@ function CreateBusiness() {
                             ))
                         }
                     </select>
-	            <Link to="/category">Add Category</Link>
                 </div>
 
                 <button type="submit">{onEdit? "Update" : "Create"}</button>

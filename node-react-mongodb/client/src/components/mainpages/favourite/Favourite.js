@@ -16,7 +16,7 @@ function Favourite() {
     }
 
     const removeBusiness = id =>{
-        if(window.confirm("Do you want to remove this business?")){
+        if(window.confirm("Do tou want to remove this business?")){
             favourite.forEach((item, index) =>{
                 if(item._id === id){
                     favourite.splice(index, 1)

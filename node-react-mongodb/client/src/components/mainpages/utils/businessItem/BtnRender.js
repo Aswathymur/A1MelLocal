@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalState } from '../../../../GlobalState'
 
+
 function BtnRender({ business, deleteBusiness }) {
     const state = useContext(GlobalState)
     const [isAdmin] = state.userAPI.isAdmin
@@ -13,7 +14,8 @@ function BtnRender({ business, deleteBusiness }) {
                 isAdmin ?
                     <>
                         <Link id="btn_love" to="#!" 
-                        onClick={() => deleteBusiness(business._id, business.images.public_id)}>
+                        onClick={() =>{ if(window.confirm('Are you sure to delete this business?')) 
+                                            deleteBusiness(business._id, business.images.public_id)}}>
                             Delete
                         </Link>
                         <Link id="btn_view" to={`/edit_business/${business._id}`}>

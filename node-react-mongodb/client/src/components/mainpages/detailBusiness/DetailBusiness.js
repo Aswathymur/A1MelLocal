@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { GlobalState } from '../../../GlobalState'
 import BusinessItem from '../utils/businessItem/BusinessItem'
+import Reviews from '../utils/review/Reviews'
+import ReviewList from '../utils/review/ReviewList'
 
 function DetailBusiness() {
     const params = useParams()
@@ -9,6 +11,9 @@ function DetailBusiness() {
     const [businesses] = state.businessesAPI.businesses
     const addFavourite = state.userAPI.addFavourite
     const [detailBusiness, setDetailBusiness] = useState([])
+
+    const [show, setShow] = useState(false)
+    const closeReview = () => setShow(false)
 
     useEffect(() => {
         if (params.id) {
@@ -19,6 +24,7 @@ function DetailBusiness() {
     }, [params.id, businesses])
 
     if (detailBusiness.length === 0) return null;
+    
 
     return (
         <>
@@ -36,9 +42,16 @@ function DetailBusiness() {
                     <p>Content: {detailBusiness.content}</p>
                     <Link to="/favourite" className="favourite" 
                     onClick={() => addFavourite(detailBusiness)}>Add to Favourite</Link>
+        
+                    <button onClick={() => setShow(true)} style={{background: "#2c2c2c", fontSize: "15px", margin: ".5rem", padding:"10px 25px", display:"inline-block"}}>Review</button>
+
                 </div>
+                <Reviews show={show} closeReview={closeReview} />
                 <h2 className="menu-title">~Menu~</h2>
                 <img id="menu" src={detailBusiness.menu.url} alt="" />
+            </div>
+            <div>
+                <ReviewList />
             </div>
 
             <div>

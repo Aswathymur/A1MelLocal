@@ -3,6 +3,7 @@ import {GlobalState} from '../../../GlobalState'
 import BusinessItem from '../utils/businessItem/BusinessItem'
 import Loading from '../utils/loading/Loading'
 import axios from 'axios'
+import Filters from './Filters'
 import LoadMore from './LoadMore'
 
 
@@ -10,7 +11,6 @@ function Businesses() {
     const state = useContext(GlobalState)
     const [businesses, setBusinesses] = state.businessesAPI.businesses
     const [isAdmin] = state.userAPI.isAdmin
-    const [isLogged] = state.userAPI.isLogged
     const [token] = state.token
     const [callback, setCallback]= state.businessesAPI.callback
     const [loading, setLoading] = useState(false)
@@ -52,7 +52,7 @@ function Businesses() {
         setIsCheck(!isCheck)
     }
 
-    const deleteAll = () =>{
+    const deleteAll = () =>{ if(window.confirm('Are you sure to delete these businesses?'))
         businesses.forEach(business =>{
             if(business.checked) deleteBusiness(business._id, business.images.public_id, business.menu.public_id)
         })
@@ -61,6 +61,7 @@ function Businesses() {
     if(loading) return <div><Loading /></div>
     return (
         <>
+        <Filters />
         {
             isAdmin &&
             <div className="delete-all">
@@ -69,17 +70,15 @@ function Businesses() {
                 <button onClick={deleteAll}>Delete All</button>
             </div>
         }
-        {
-            isLogged &&
-            <div className="businesses">
-                {
-                    businesses.map(business =>{
-                        return <BusinessItem key={business._id} business={business}
-                        isAdmin={isAdmin} deleteBusiness={deleteBusiness} handleCheck={handleCheck}/>
-                    })
-                }
-            </div>
-        }
+        
+        <div className="businesses">
+            {
+                businesses.map(business =>{
+                    return <BusinessItem key={business._id} business={business}
+                    isAdmin={isAdmin} deleteBusiness={deleteBusiness} handleCheck={handleCheck}/>
+                })
+            }
+        </div>
 
         <LoadMore />
         {businesses.length === 0 && <Loading />}
