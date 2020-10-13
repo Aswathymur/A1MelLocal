@@ -10,11 +10,6 @@ function BusinessesAPI() {
         const [page, setPage] = useState(1)
         const [result, setResult] = useState(0)
 
-        // get user id
-        // get only busineses belonging to user !
-
-
-
         useEffect(() =>{
             const getBusinesses = async () => {
                 const res = await axios.get(`/api/businesses?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)

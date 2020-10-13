@@ -5,7 +5,6 @@ function UserAPI(token) {
     const [isLogged, setIsLogged] = useState(false)
     const [isAdmin, setIsAdmin] = useState(false)
     const [favourite, setFavourite] = useState([])
-    const [user, setUser] = useState([])
 
     useEffect(() =>{
         if(token){
@@ -19,8 +18,6 @@ function UserAPI(token) {
                     res.data.role === 1 ? setIsAdmin(true) : setIsAdmin(false)
 
                     setFavourite(res.data.favourite)
-
-                    setUser(res.data)
 
                 } catch (err) {
                     alert(err.response.data.msg)
@@ -54,7 +51,6 @@ function UserAPI(token) {
         isLogged: [isLogged, setIsLogged],
         isAdmin: [isAdmin, setIsAdmin],
         favourite: [favourite, setFavourite],
-	user: [user, setUser],
         addFavourite: addFavourite
     }
 }
