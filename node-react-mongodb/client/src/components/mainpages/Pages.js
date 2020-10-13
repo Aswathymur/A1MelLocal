@@ -22,7 +22,10 @@ function Pages() {
     return (
         <div>
             <Switch>
-                <Route path="/" exact component={Businesses} />
+                <Route path="/" exact component={Map} />
+
+                <Route path="/directory" exact component={Businesses} />
+
                 <Route path="/detail/:id" exact component={DetailBusiness} />
 
                 <Route path="/login" exact component={isLogged ? NotFound : Login} />
