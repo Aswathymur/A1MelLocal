@@ -60,7 +60,6 @@ function Header() {
             </div>
 
             <ul>
-                <li><Link to="/MVF1">User Guide</Link></li>
                 <li><Link to="/directory">Directory</Link></li>
                 <li><Link to="/map">Map</Link></li>
                 {isAdmin && adminRouter()}
