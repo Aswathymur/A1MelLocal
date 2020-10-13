@@ -10,7 +10,7 @@
 
 .login-page form{
     margin: 50px auto;
-    border: 2px solid rgb(3, 165, 206);
+    border: 2px solid #15576e;
     padding: 30px;
     height: 20vh;
     min-height: 300px;
@@ -26,7 +26,8 @@
     margin: 10px 0;
     padding: 0 5px;
     outline: rgb(3, 165, 206);
-    border: 1px solid rgb(3, 165, 206);
+    border: 1px solid #15576e;
+    background-color: #0c4356;
 }
 
 .login-page form .row{
@@ -37,7 +38,7 @@
 
 .login-page form button{
     width: 150px;
-    background: rgb(3, 165, 206);
+    background:  #15576e;
     color: white;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -62,7 +63,7 @@
 
 .register-page form{
     margin: 50px auto;
-    border: 2px solid rgb(3, 165, 206);
+    border: 2px solid #15576e;
     padding: 30px;
     height: 20vh;
     min-height: 500px;
@@ -78,7 +79,8 @@
     margin: 10px 0;
     padding: 0 5px;
     outline: rgb(3, 165, 206);
-    border: 1px solid rgb(3, 165, 206);
+    border: 1px solid #15576e;
+    background-color: #0c4356;
 }
 
 .register-page form .row{
