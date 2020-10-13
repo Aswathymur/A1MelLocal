@@ -40,7 +40,7 @@ function Header() {
     const loggedOutRouter = () => {
     	return (
 	        <>
-        		<Link to='/login'>Login/Register</Link>
+        		<li><Link to='/login'>Login/Register</Link></li>
 	        </>
     	)
     }
