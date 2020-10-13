@@ -4,7 +4,7 @@ import axios from 'axios'
 
 function Register() {
     const [user, setUser] = useState({
-        firstName:'', lastName:'', email:'', password:''
+        firstName:'', lastName:'', email:'', password:'', role:''
     })
 
     const onChangeInput = e =>{
@@ -40,6 +40,9 @@ function Register() {
 
                 <input type="password" name="password" required autoComplete="on" 
                 placeholder="Password" value={user.password} onChange={onChangeInput} />
+
+                <p>Business</p>
+                <input type="checkbox" name="role"  value="1" onChange={onChangeInput} />
 
                 <div className="row">
                     <button type="submit">Submit</button>
