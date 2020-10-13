@@ -102,3 +102,22 @@
     letter-spacing: 1.3px;
     text-transform: uppercase;
 }
+
+.register-page .businessSignup {
+    text-align: center;
+    margin: 20px 0px;
+}
+.register-page .businessSignup .label {
+    margin: auto;
+    width: 50%;
+    display: inline-block;
+}
+.register-page .businessSignup .label h4 {
+    font-size: 20px;
+}
+.register-page .businessSignup input {
+    margin: auto;
+    width: 50%;
+    color: red;
+    display: inline-block;
+}
