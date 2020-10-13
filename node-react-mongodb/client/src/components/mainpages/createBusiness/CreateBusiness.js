@@ -6,14 +6,14 @@ import { Link, useHistory, useParams } from 'react-router-dom'
 
 const initialState = {
     business_id: '',
-    title: 'title',
-    address: 'address',
+    title: 'Title',
+    address: '24 Example Avenue',
     price: 100,
-    description: '123 Fake Street',
-    content: 'Content',
+    description: 'An example business description.',
+    content: 'Content.',
     category: '',
-    lat: '123',
-    lng: '123',
+    lat: '-37.8136',
+    lng: '144.9631',
     user: '',
     _id: ''
 }
