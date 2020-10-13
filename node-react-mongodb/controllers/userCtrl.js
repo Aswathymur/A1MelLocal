@@ -117,7 +117,7 @@ const userCtrl = {
 
                 res.json({ rf_token })
         } catch (err) {
-            return res.status(500).json({ msg: err.message })
+//            return res.status(500).json({ msg: err.message })
         }
 
     },
