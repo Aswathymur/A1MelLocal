@@ -24,7 +24,7 @@ function BtnRender({ business, deleteBusiness }) {
                     </>
                     : <>
                         <Link id="btn_love" to="#!" onClick={() => addFavourite(business)}>
-                            Love
+                            Favourite
                         </Link>
                         <Link id="btn_view" to={`/detail/${business._id}`}>
                             View
