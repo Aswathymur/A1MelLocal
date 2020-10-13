@@ -27,7 +27,6 @@
     padding: 0 5px;
     outline: rgb(3, 165, 206);
     border: 1px solid #15576e;
-    background-color: #0c4356;
 }
 
 .login-page form .row{
@@ -42,6 +41,7 @@
     color: white;
     text-transform: uppercase;
     letter-spacing: 2px;
+    background-color: #0c4356;
 }
 
 .login-page form a{
@@ -80,7 +80,6 @@
     padding: 0 5px;
     outline: rgb(3, 165, 206);
     border: 1px solid #15576e;
-    background-color: #0c4356;
 }
 
 .register-page form .row{
@@ -95,6 +94,7 @@
     color: white;
     text-transform: uppercase;
     letter-spacing: 2px;
+    background-color: #0c4356;
 }
 
 .register-page form a{
