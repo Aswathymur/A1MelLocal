@@ -22,6 +22,11 @@ app.use('/api', require('./routes/categoryRouter'))
 app.use('/api', require('./routes/upload'))
 app.use('/api', require('./routes/businessRouter'))
 
+// final catch-all route to index.html defined last
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/client/build/index.html');
+});
+
 //Connect to mongodb
 const URI = process.env.MONGODB_URL
 mongoose.connect(URI, {
