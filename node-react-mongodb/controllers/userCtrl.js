@@ -135,7 +135,6 @@ const userCtrl = {
         try {
             const userid = req.cookies.userid;
             const user = await UserModel.findById(userid).select('-password')
-		console.log(user)
             res.json(user)
         } catch (err) {
             return res.status(500).json({ msg: err.message })

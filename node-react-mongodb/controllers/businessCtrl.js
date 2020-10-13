@@ -77,8 +77,6 @@ const businessCtrl = {
 
             const businesses = await features.query
 
-	    console.log(req.query)
-
             res.json({
                 status: 'success',
                 result: businesses.length,
@@ -93,9 +91,6 @@ const businessCtrl = {
         try {
             const {business_id, title, price, address, description, content, images, category, menu, lat, lng, user} = req.body;
             if(!images/ !menu) return res.status(400).json({msg: "No image upload"})
-
-		console.log("ANYTHING AT ALL")
-		console.log(req.body)
 
             const business = await Businesses.findOne({business_id})
             if(business)

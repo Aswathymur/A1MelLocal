@@ -16,11 +16,6 @@ app.use(fileUpload({
     useTempFiles: true
 }))
 
-// Catch all.
-app.use('*', function (req, res) {
-  res.sendFile(__dirname + '/client/build/index.html');
-});
-
 //Routes
 app.use('/user', require('./routes/userRouter'))
 app.use('/api', require('./routes/categoryRouter'))
