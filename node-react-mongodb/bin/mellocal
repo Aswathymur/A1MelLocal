@@ -1,0 +1,26 @@
+#!/bin/bash
+[ $UID -ne 0 ] && echo "Error: Insuficient access; root user required." && exit 1
+[ ! -e "/root/.ssh/id_rsa" ] && echo "Error: No SSH keys configured. Setup deployment keys on github before continuing." && exit 2
+lsb_release -a 2> /dev/null | head -2 | tail -1 | grep --quiet Ubuntu.*LTS || { echo "Error: Invalid operating system; Ubuntu LTS recommended."; exit 3; }
+set -x
+apt-get update
+apt-get upgrade
+apt-get install git mongodb-server npm tree vim
+cd "/opt/"
+[ ! -d "mellocal" ] && git clone "git@github.com:jngy/mellocal.git" "mellocal"
+[   -d "mellocal" ] && cd "mellocal" && git pull && cd ..
+[ ! -d "mellocal" ] && echo "Error: Failed to clone mellocal repository; check your SSH keys." && exit 4
+cd "mellocal"
+cd node-react-mongodb
+npm install
+cd "client"
+npm install
+npm build
+npm run-script build
+cd ..
+node_modules/pm2/bin/pm2 delete server.js
+node_modules/pm2/bin/pm2 start  server.js
+iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -i eth0 -p tcp --dport 5000 -j ACCEPT
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 5000
+ln -sf "$(realpath $0)" "/usr/bin/mellocal"
