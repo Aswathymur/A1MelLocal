@@ -1,8 +1,8 @@
 import React, {createContext, useState, useEffect} from 'react'
 import BusinessesAPI from './api/BusinessesAPI'
-import MyBusinessesAPI from './api/MyBusinessesAPI'
-import CategoriesAPI from './api/CategoriesAPI'
 import UserAPI from './api/UserAPI'
+import CategoriesAPI from './api/CategoriesAPI'
+import ReviewsAPI from './api/ReviewsAPI'
 
 import axios from 'axios'
 
@@ -17,7 +17,9 @@ export const DataProvider = ({children}) =>{
         if(firstLogin){
             const refreshToken = async () =>{
                 const res = await axios.get('/user/refresh_token')
+        
                 setToken(res.data.accesstoken)
+    
                 setTimeout(() =>{
                     refreshToken()
                 }, 10 * 60 * 1000)
@@ -29,9 +31,9 @@ export const DataProvider = ({children}) =>{
     const state = {
         token: [token, setToken],
         businessesAPI: BusinessesAPI(),
-	myBusinessesAPI: MyBusinessesAPI(),
         userAPI: UserAPI(token),
-        categoriesAPI: CategoriesAPI()
+        categoriesAPI: CategoriesAPI(),
+        reviewsAPI: ReviewsAPI()
     }
 
     return (
