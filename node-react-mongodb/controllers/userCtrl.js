@@ -1,31 +1,13 @@
-const UserModel = require('../models/userModel')
+const Users = require('../models/userModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-
 const userCtrl = {
-    find: async (req,res) => {
-        let found = await UserModel.find({email: req.params.email})
-        res.json(found)
-    },
-    all: async (req, res) => {
-        let allUsers = await UserModel.find()
-        res.json(allUsers)
-    },
-    create: async (req, res) => {
-        let newUser = new UserModel(req.body)
-        let savedUser = await newUser.save()
-        res.json(savedUser)
-    },
-    getAllBusinesses: async (req, res) => {
-        let foundUser = await UserModel.find({email: req.params.email}).populate("Businesses")
-        res.json(foundUser)
-    },
     register: async (req, res) => {
         try {
-            const { lastName, firstName, email, password, role } = req.body;
+            const { lastName, firstName, email, password } = req.body;
 
-            const user = await UserModel.findOne({ email })
+            const user = await Users.findOne({ email })
             if (user) return res.status(400).json({ msg: "The email already exists." })
 
             if (password.length < 6)
@@ -33,13 +15,12 @@ const userCtrl = {
 
             //Password Encryption
             const passwordHash = await bcrypt.hash(password, 10)
-            const newUser = new UserModel({
-                firstName, lastName, email, password: passwordHash, role
+            const newUser = new Users({
+                firstName, lastName, email, password: passwordHash
             })
 
             //Save mongoDB
             await newUser.save()
-
 
             //Then create jsonwebtoken to authentication
             const accesstoken = createAccessToken({ id: newUser._id })
@@ -53,7 +34,6 @@ const userCtrl = {
 
             res.json({ accesstoken })
 
-
         } catch (err) {
             return res.status(500).json({ msg: err.message })
         }
@@ -62,7 +42,7 @@ const userCtrl = {
         try {
             const {email, password} = req.body;
 
-            const user = await UserModel.findOne({email})
+            const user = await Users.findOne({email})
             if(!user) return res.status(400).json({msg: "User does not exist."})
 
             const isMatch = await bcrypt.compare(password,user.password)
@@ -71,12 +51,6 @@ const userCtrl = {
             //If login success, create access token and refresh token
             const accesstoken = createAccessToken({ id: user._id })
             const refreshtoken = createRefreshToken({ id: user._id })
-
-	    res.cookie('userid', user._id, {
-                httpOnly: true,
-                path: '/',
-                maxAge: 7*24*60*60*1000 //7d
-	    })
 
             res.cookie('refreshtoken', refreshtoken, {
                 httpOnly: true,
@@ -91,13 +65,9 @@ const userCtrl = {
         }
     },
     logout: async (req, res) => {
-
-
         try {
             res.clearCookie('refreshtoken', {path: '/user/refresh_token'})
-
             return res.json({msg: "Logged Out"})
-
         } catch (err) {
             return res.status(500).json({ msg: err.message })
         }
@@ -117,13 +87,13 @@ const userCtrl = {
 
                 res.json({ rf_token })
         } catch (err) {
-//            return res.status(500).json({ msg: err.message })
+            return res.status(500).json({ msg: err.message })
         }
 
     },
     getUser: async (req, res) =>{
         try {
-            const user = await UserModel.findById(req.user.id).select('-password')
+            const user = await Users.findById(req.user.id).select('-password')
             if(!user) return res.status(400).json({ msg:"User does not exist."})
 
             res.json(user)
@@ -131,21 +101,12 @@ const userCtrl = {
             return res.status(500).json({ msg: err.message })
         }
     },
-    getUserInfo: async (req, res) =>{
-        try {
-            const userid = req.cookies.userid;
-            const user = await UserModel.findById(userid).select('-password')
-            res.json(user)
-        } catch (err) {
-            return res.status(500).json({ msg: err.message })
-        }
-    },
     addFavourite: async (req, res) =>{
         try {
-            const user = await UserModel.findById(req.user.id)
+            const user = await Users.findById(req.user.id)
             if(!user) return res.status(400).json({msg: "User does not exist"})
 
-            await UserModel.findOneAndUpdate({_id: req.user.id}, {
+            await Users.findOneAndUpdate({_id: req.user.id}, {
                 favourite: req.body.favourite
             })
 

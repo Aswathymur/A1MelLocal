@@ -65,31 +65,9 @@ const businessCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
-    getMyBusinesses: async(req, res) =>{
-        try {
-
-	    const userid = req.cookies.userid
-
-	    req.query['user'] = userid
-
-            const features = new APIfeatures(Businesses.find(), req.query)
-            .filtering().sorting().paginating()
-
-            const businesses = await features.query
-
-            res.json({
-                status: 'success',
-                result: businesses.length,
-                businesses: businesses
-            })
-
-        } catch (err) {
-            return res.status(500).json({msg: err.message})
-        }
-    },
     createBusiness: async(req, res) =>{
         try {
-            const {business_id, title, price, address, description, content, images, category, menu, lat, lng, user} = req.body;
+            const {business_id, title, price, address, description, content, images, category, menu, lat, lng} = req.body;
             if(!images/ !menu) return res.status(400).json({msg: "No image upload"})
 
             const business = await Businesses.findOne({business_id})
@@ -97,7 +75,7 @@ const businessCtrl = {
                 return res.status(400).json({msg:"This business already exists"})
 
             const newBusiness = new Businesses({
-                business_id, title: title.toLowerCase(), price, address, description, content, images, category, menu, lat, lng, user
+                business_id, title: title.toLowerCase(), price, address, description, content, images, category, menu, lat, lng
             })
 
             await newBusiness.save()
