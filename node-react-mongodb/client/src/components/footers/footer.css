@@ -1,0 +1,11 @@
+footer{
+    height: 30vh;
+    width: 100%;
+    background-color: #f2f2f2;
+    color: black;
+    opacity: 0.9;
+}
+
+footer .container {
+    padding: 100px 50px 0px 50px;
+}

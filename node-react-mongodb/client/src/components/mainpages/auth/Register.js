@@ -26,7 +26,7 @@ function Register() {
     }
 
     return (
-        <div className="login-page">
+        <div className="register-page">
             <form onSubmit={registerSubmit}>
                 <h2>Register</h2>
                 <input type="text" name="firstName" required 

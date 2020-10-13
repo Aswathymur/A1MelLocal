@@ -1,15 +1,22 @@
 .login-page{
-    max-width: 500px;
-    border: 2px solid rgb(3, 165, 206);
-    border-radius: 5px;
-    padding: 30px;
-    margin: 50px auto;
+    min-height: 90vh;
 }
 
 .login-page h2{
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #555;
+}
+
+.login-page form{
+    margin: 50px auto;
+    border: 2px solid rgb(3, 165, 206);
+    padding: 30px;
+    height: 20vh;
+    min-height: 300px;
+    border-radius: 5px;
+    width: 80vh;
+    max-width: 550px;
 }
 
 .login-page form input,
@@ -37,6 +44,58 @@
 }
 
 .login-page form a{
+    color: rgb(240, 128, 0);
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+
+.register-page{
+    min-height: 90vh;
+}
+
+.register-page h2{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+}
+
+.register-page form{
+    margin: 50px auto;
+    border: 2px solid rgb(3, 165, 206);
+    padding: 30px;
+    height: 20vh;
+    min-height: 500px;
+    border-radius: 5px;
+    width: 80vh;
+    max-width: 550px;
+}
+
+.register-page form input,
+.register-page form button{
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 0 5px;
+    outline: rgb(3, 165, 206);
+    border: 1px solid rgb(3, 165, 206);
+}
+
+.register-page form .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register-page form button{
+    width: 150px;
+    background: rgb(3, 165, 206);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.register-page form a{
     color: rgb(240, 128, 0);
     letter-spacing: 1.3px;
     text-transform: uppercase;
