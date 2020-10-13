@@ -1,22 +1,21 @@
 const mongoose = require("mongoose");
 
-const ReviewSchema = new mongoose.Schema({
-    customerName: {
+const reviewSchema = new mongoose.Schema({
+    writer: {
         type: String,
-        required: [true, "Customer name is required"],
-        minlength: [2, "Customer name must be 2 characters or longer"]
+        trim: true,
+        required: true
     },
-    reviewDescription: {
-        type: String,
-        required: [true, "Review Description is required"],
-        minlength: [10, "Review Description must be 10 characters or longer"]
-    },
-    rating: {
+    rating:{
         type: Number,
-        required: [true, "Rating is required"]
+        trim: true,
+        required: true
+    },
+    content: {
+        type: String,
+        trim: true,
+        required: true
     }
 }, {timestamps: true});
 
-mongoose.model("Review", ReviewSchema);
-
-module.exports = ReviewSchema;
+module.exports = mongoose.model("Reviews", reviewSchema);

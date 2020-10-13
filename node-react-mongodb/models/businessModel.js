@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema
 
 
 const businessSchema = new mongoose.Schema({
@@ -36,8 +35,8 @@ const businessSchema = new mongoose.Schema({
         required: true
     },
     category:{
-        type: Schema.Types.ObjectId,
-        ref: "Category"
+        type: String,
+        required: true
     },
     checked:{
         type: Boolean,
@@ -54,10 +53,6 @@ const businessSchema = new mongoose.Schema({
     lng:{
         type: Number,
         required: true
-    },
-    user:{
-        type: Schema.Types.ObjectId,
-        ref: "User"
     }
 },{
     timestamps: true

@@ -19,6 +19,11 @@ const menuSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
+    belong: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     images:{
         type: Object,
         required: true

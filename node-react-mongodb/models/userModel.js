@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -28,13 +27,9 @@ const userSchema = new mongoose.Schema({
     favourite: {
         type: Array,
         default: []
-    },
-    business: {
-        type: Array,
-        default: []
     }
 },{
     timestamps: true
 })
 
-module.exports = mongoose.model("Users", userSchema)
+module.exports = mongoose.model('Users', userSchema)
