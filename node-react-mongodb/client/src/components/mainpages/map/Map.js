@@ -1,16 +1,24 @@
-import React, { useContext, useState} from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState, useEffect, useCallback, useRef } from 'react'
+import { useParams, Link } from 'react-router-dom'
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps/api"
+import { formatRelative } from 'date-fns'
 import { GlobalState } from '../../../GlobalState'
 
 import mapStyles from './mapStyles'
+import Filters from '../businesses/Filters'
+
+// Import Bootstrap React Components
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 // import "@reach/combobox/style.css"
 
 const libraries = ["places"];
 
 const mapContainerStyle = {
-  width: "55.8vw",
-  height: "90vh",
+  width: "100%",
+  height: "100vh",
 };
 
 const center = {
@@ -23,6 +31,7 @@ const options = {
 }
 
 export default function Map() {
+  const params = useParams()
   const state = useContext(GlobalState)
   const [businesses] = state.businessesAPI.businesses
   const [selected, setSelected] = useState({})
@@ -40,42 +49,50 @@ export default function Map() {
     setSelected(item);
   }
 
-  return <div>
-    <GoogleMap
-      mapContainerStyle={mapContainerStyle}
-      zoom={14}
-      center={center}
-      options={options}
-    >
-      {
-        businesses.map(item => {
-          return (
-            <Marker key={item.title}
-              position={{ lat: item.lat, lng: item.lng }}
-              onClick={() => onSelect(item)} />
-          )
-        })
-      }
-      {
-        selected.lat &&
-        (
-          <InfoWindow
-            position={{ lat: selected.lat, lng: selected.lng }}
-            clickable={true}
-            onCloseClick={() => setSelected({})}
-          ><div className="window">
-              <img src={selected.images.url} alt="" />
-              <h2><b>{selected.title}</b></h2>
-              <p><b>Address:</b> {selected.address}</p>
-              <p><b>Price Rate:</b> {selected.price}</p>
-              <button><Link to={`/detail/${selected._id}`}>More Information</Link></button>
-            </div>
-          </InfoWindow>
-        )
-      }
+  return <Container fluid>
+      <Row>
+        <Col>
+          <Filters />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <GoogleMap
+            mapContainerStyle={mapContainerStyle}
+            zoom={14}
+            center={center}
+            options={options}
+          >
+            {
+              businesses.map(item => {
+                return (
+                  <Marker key={item.title}
+                    position={{ lat: item.lat, lng: item.lng }}
+                    onClick={() => onSelect(item)} />
+                )
+              })
+            }
+            {
+              selected.lat &&
+              (
+                <InfoWindow
+                  position={{ lat: selected.lat, lng: selected.lng }}
+                  clickable={true}
+                  onCloseClick={() => setSelected({})}
+                ><div className="window">
+                    <img src={selected.images.url} alt="" />
+                    <h2><b>{selected.title}</b></h2>
+                    <p><b>Address:</b> {selected.address}</p>
+                    <p><b>Price Rate:</b> {selected.price}</p>
+                    <button><Link to={`/detail/${selected._id}`}>More Information</Link></button>
+                  </div>
+                </InfoWindow>
+              )
+            }
 
-    </GoogleMap>
-  </div>;
+          </GoogleMap>
+        </Col>
+      </Row>
+  </Container>;
 
 }
-
