@@ -1,7 +1,6 @@
-import React, { useContext, useState, useEffect, useCallback, useRef } from 'react'
+import React, { useContext, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps/api"
-import { formatRelative } from 'date-fns'
 import { GlobalState } from '../../../GlobalState'
 
 import mapStyles from './mapStyles'
@@ -34,7 +33,6 @@ const options = {
 }
 
 export default function Map() {
-  const params = useParams()
   const state = useContext(GlobalState)
   const [businesses] = state.businessesAPI.businesses
   const [selected, setSelected] = useState({})
