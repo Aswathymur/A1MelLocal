@@ -24,8 +24,7 @@ function Header() {
     const adminRouter = () => {
         return (
             <>
-                <li><Link to="/create_business">Create Business</Link></li>
-                <li><Link to="/category">Category</Link></li>
+                <li><Link to="/my_business">My Businesses</Link></li>
             </>
         )
     }
@@ -36,6 +35,14 @@ function Header() {
                 <li><Link to="/" onClick={logoutUser}>Logout</Link></li>
             </>
         )
+    }
+
+    const loggedOutRouter = () => {
+    	return (
+	        <>
+        		<Link to='/login'>Login/Register</Link>
+	        </>
+    	)
     }
 
     return (
@@ -54,21 +61,17 @@ function Header() {
 
             <ul>
                 <li><Link to="/MVF1">User Guide</Link></li>
+                <li><Link to="/directory">Directory</Link></li>
                 <li><Link to="/map">Map</Link></li>
-                <li><Link to="/">{isAdmin ? 'Admin' : 'Business'}</Link></li>
                 {isAdmin && adminRouter()}
-                {
-                    isLogged ? loggedRouter() : <li><Link to="/login">Login/ Register</Link></li>
-                }
-
+                {isLogged ? loggedRouter() : loggedOutRouter()}
                 <li>
                     <img src={Close} alt="" width="30" className="menu" />
                 </li>
             </ul>
-
             {
                 isAdmin ? ''
-                    : <div className="favourite-icon">
+                    : isLogged && <div className="favourite-icon">
                         <span>{favourite.length}</span>
                         <Link to="/favourite">
                             <img src={Favourite} alt="" width="30" />
