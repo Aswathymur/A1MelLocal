@@ -23,7 +23,10 @@ app.use('/api', require('./routes/upload'))
 app.use('/api', require('./routes/businessRouter'))
 app.use('/api', require('./routes/reviewRouter'))
 
-
+// Final catch-all route to index.html defined last
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/client/build/index.html');
+});
 
 
 //Connect to mongodb
@@ -37,7 +40,6 @@ mongoose.connect(URI, {
     if(err) throw err;
     console.log('Connected to MongoDB')
 })
-
 
 
 const PORT = process.env.PORT || 5000
