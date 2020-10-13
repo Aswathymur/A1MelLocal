@@ -9,6 +9,9 @@ import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Image from 'react-bootstrap/Image'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import axios from 'axios'
 
 function Header() {
@@ -45,32 +48,39 @@ function Header() {
     const loggedOutRouter = () => {
 	return (
 	    <>
-		<Link to='/login'>Login/ Register</Link>
+		<Link to='/login'>Login/Register</Link>
 	    </>
 	)
     }
 
     return (
         <header>
-            <Navbar className='justify-content-end' activeKey='/'>
-                <Navbar.Brand href='/'>{isAdmin ? <img src={Logo} alt='' width='80' /> : <img src={Logo} alt='' width='80' />}</Navbar.Brand>
-                <Nav.Item>
-                {isAdmin && adminRouter()}
-                {isLogged ? loggedRouter() : loggedOutRouter()}
-                </Nav.Item>
-                <Nav.Item>
-                {
-                isAdmin ? ''
-                    : isLogged && <div className='favourite-icon'>
-                        <span>{favourite.length}</span>
-                        <Link to='/favourite'>
-                            <img src={Favourite} alt='' width='30' />
-                        </Link>
-                    </div>
-                }
-                </Nav.Item>
-            </Navbar>
-
+            <Container fluid>
+                <Row>
+                    <Col>   
+                        <Navbar.Brand href='/'>{isAdmin ? <img src={Logo} alt='' width='80' /> : <img src={Logo} alt='' width='80' />}</Navbar.Brand>
+                    </Col>
+                    <Col>
+                        <Navbar className='justify-content-end' activeKey='/'>
+                            <Nav.Item>
+                            {isAdmin && adminRouter()}
+                            {isLogged ? loggedRouter() : loggedOutRouter()}
+                            </Nav.Item>
+                            <Nav.Item>
+                            {
+                            isAdmin ? ''
+                                : isLogged && <div className='favourite-icon'>
+                                    <span>{favourite.length}</span>
+                                    <Link to='/favourite'>
+                                        <img src={Favourite} alt='' width='30' />
+                                    </Link>
+                                </div>
+                            }
+                            </Nav.Item>
+                        </Navbar>
+                    </Col>
+                </Row> 
+            </Container>
         </header>
     )
 }
