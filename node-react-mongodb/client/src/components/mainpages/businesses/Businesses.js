@@ -14,7 +14,6 @@ function Businesses() {
     const [token] = state.token
     const [callback, setCallback]= state.businessesAPI.callback
     const [loading, setLoading] = useState(false)
-    const [isCheck, setIsCheck] = useState(false)
 
     const handleCheck = (id) =>{
        businesses.forEach(business => {
@@ -44,33 +43,11 @@ function Businesses() {
         }
     }
 
-    const checkAll = () =>{
-        businesses.forEach(business =>{
-            business.checked = !isCheck
-        })
-        setBusinesses([...businesses])
-        setIsCheck(!isCheck)
-    }
-
-    const deleteAll = () =>{ if(window.confirm('Are you sure to delete these businesses?'))
-        businesses.forEach(business =>{
-            if(business.checked) deleteBusiness(business._id, business.images.public_id, business.menu.public_id)
-        })
-    }
-
     if(loading) return <div><Loading /></div>
     return (
         <>
         <Filters />
-        {
-            isAdmin &&
-            <div className="delete-all">
-                <span>Select all</span>
-                <input type="checkbox" checked={isCheck} onChange={checkAll} />
-                <button onClick={deleteAll}>Delete All</button>
-            </div>
-        }
-        
+
         <div className="businesses">
             {
                 businesses.map(business =>{

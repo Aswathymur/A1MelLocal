@@ -5,6 +5,7 @@ import Loading from '../utils/loading/Loading'
 import axios from 'axios'
 import Filters from './Filters'
 import LoadMore from './LoadMore'
+import { Link } from 'react-router-dom'
 
 
 function MyBusinesses() {
@@ -64,13 +65,19 @@ function MyBusinesses() {
         <Filters />
         {
             isAdmin &&
+            <div className="delete-all create-all">
+        		<Link to='/category'><button>Create Category</button></Link>
+        		<Link to='/create_business'><button>Create Business</button></Link>
+            </div>
+        }
+        {
+            isAdmin &&
             <div className="delete-all">
                 <span>Select all</span>
                 <input type="checkbox" checked={isCheck} onChange={checkAll} />
-                <button onClick={deleteAll}>Delete All</button>
+                <button onClick={deleteAll}>Delete</button>
             </div>
         }
-        
         <div className="businesses">
             {
                 businesses.map(business =>{

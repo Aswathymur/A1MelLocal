@@ -33,10 +33,15 @@
 }
 
 .delete-all button{
-    border: 1px solid crimson;
+    border: 1px solid red;
     padding: 10px 25px;
-    color: crimson;
+    color: red;
     text-transform: uppercase;
+}
+
+.create-all button {
+    border: 1px solid #15576e;
+    color: #15576e;
 }
 
 /* ----------------- Filters Menu --------------- */

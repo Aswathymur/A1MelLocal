@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps/api"
 import { GlobalState } from '../../../GlobalState'
 
