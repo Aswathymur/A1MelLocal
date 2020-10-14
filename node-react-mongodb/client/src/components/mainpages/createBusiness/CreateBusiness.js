@@ -6,14 +6,15 @@ import {useHistory, useParams} from 'react-router-dom'
 
 const initialState = {
     business_id: '',
-    title: '',
-    address: '',
-    price: 0,
-    description: '',
-    content: '',
+    title: 'Sample Title',
+    address: '123 Example Avenue',
+    price: 99.99,
+    description: 'A helpful description.',
+    content: 'Some useful content.',
     category: '',
-    lat: '',
-    lng: '',
+    lat: '-37.8136',
+    lng: '144.9631',
+    user: '',
     _id: ''
 }
 
@@ -21,6 +22,7 @@ function CreateBusiness() {
     const state = useContext(GlobalState)
     const [business, setBusiness] = useState(initialState)
     const [categories] = state.categoriesAPI.categories
+    const [user] = state.userAPI.user
     const [images, setImages] = useState(false)
     const [menu, setMenu] = useState(false)
     const [loading, setLoading] = useState(false)
@@ -152,6 +154,9 @@ function CreateBusiness() {
             if (!isAdmin) return alert("You're not an admin")
             if (!images/!menu) return alert("No Image Upload")
 
+    	    business.business_id = Math.floor(Math.random() * 1000000000000)
+	        business.user        = user._id
+
             if(onEdit){
                 await axios.put(`/api/businesses/${business._id}`, {...business, images, menu},{
                     headers: {Authorization: token}
@@ -202,11 +207,6 @@ function CreateBusiness() {
 
             </div>
             <form onSubmit={handleSubmit}>
-                <div className="row">
-                    <label htmlFor="business_id">Business ID</label>
-                    <input type="text" name="business_id" id="business_id" required
-                        value={business.business_id} onChange={handleChangeInput} disabled={onEdit}/>
-                </div>
 
                 <div className="row">
                     <label htmlFor="title">Title</label>

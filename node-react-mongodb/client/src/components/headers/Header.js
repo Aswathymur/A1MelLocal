@@ -24,7 +24,7 @@ function Header() {
     const adminRouter = () => {
         return (
             <>
-                <li><Link to="/my_business">My Businesses</Link></li>
+                <li><Link to="/my_businesses">My Businesses</Link></li>
             </>
         )
     }

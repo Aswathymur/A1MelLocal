@@ -12,5 +12,8 @@ router.route('/businesses/:id')
     .put(businessCtrl.updateBusiness)
 
 
+router.route('/my_businesses')
+    .get(businessCtrl.getMyBusinesses)
+
 
 module.exports = router

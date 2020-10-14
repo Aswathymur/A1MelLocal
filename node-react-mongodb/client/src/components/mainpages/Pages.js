@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {Switch, Route} from 'react-router-dom'
 import Businesses from './businesses/Businesses'
+import MyBusinesses from './myBusinesses/MyBusinesses'
 import DetailBusiness from './detailBusiness/DetailBusiness'
 import Login from './auth/Login'
 import Register from './auth/Register'
@@ -34,6 +35,8 @@ function Pages() {
                 <Route path="/category" exact component={isAdmin ? Categories : NotFound} />
                 <Route path="/create_business" exact component={isAdmin ? CreateBusiness : NotFound} />
                 <Route path="/edit_business/:id" exact component={isAdmin ? CreateBusiness : NotFound} />
+
+                <Route path="/my_businesses" exact component={isAdmin ? MyBusinesses : NotFound} />
 
                 <Route path="/favourite" exact component={Favourite} />
                 <Route path="/map" exact component={Map} />

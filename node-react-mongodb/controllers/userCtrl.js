@@ -26,6 +26,12 @@ const userCtrl = {
             const accesstoken = createAccessToken({ id: newUser._id })
             const refreshtoken = createRefreshToken({ id: newUser._id })
 
+            res.cookie('userid', newUser._id, {
+                httpOnly: true,
+                path: '/',
+                maxAge: 7*24*60*60*1000 //7d
+            })
+
             res.cookie('refreshtoken', refreshtoken, {
                 httpOnly: true,
                 path: '/user/refresh_token',
@@ -51,6 +57,12 @@ const userCtrl = {
             //If login success, create access token and refresh token
             const accesstoken = createAccessToken({ id: user._id })
             const refreshtoken = createRefreshToken({ id: user._id })
+
+            res.cookie('userid', user._id, {
+                httpOnly: true,
+                path: '/',
+                maxAge: 7*24*60*60*1000 //7d
+            })
 
             res.cookie('refreshtoken', refreshtoken, {
                 httpOnly: true,
