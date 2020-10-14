@@ -14,7 +14,7 @@ Clone repository.
 ``git clone https://github.com/Aswathymur/A1MelLocal.git MelLocal``  
   
 Change to node folder.  
-``cd MelLocal/node-react``  
+``cd MelLocal/node-react-mongodb``  
 
 Configure environment file.  
 ``cp .env.sample .env``  
