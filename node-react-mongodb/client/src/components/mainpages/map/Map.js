@@ -89,7 +89,7 @@ export default function Map() {
                     <img src={selected.images.url} alt="" />
                     <h2><b>{selected.title}</b></h2>
                     <p><b>Address:</b> {selected.address}</p>
-                    <p><b>Price Rate:</b> {selected.price}</p>
+                    <p><b>Average Spend:</b> ${selected.price}</p>
                     <button><Link to={`/detail/${selected._id}`}>More Information</Link></button>
                   </div>
                 </InfoWindow>
