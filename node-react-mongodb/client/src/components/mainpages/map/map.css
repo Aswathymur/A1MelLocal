@@ -1,7 +1,7 @@
 .window{
     width: 350px;
     overflow: hidden;
-    height: 450px;
+    height: auto;
     padding: 15px;
     box-shadow: 0 0 15px #ddd;
     margin: 10px 0;
@@ -11,6 +11,7 @@
 
 .window img{
     width: 100%;
+    height: auto;
 }
 
 .window p{
