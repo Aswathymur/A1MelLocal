@@ -36,7 +36,7 @@ function DetailBusiness() {
                         <h2>{detailBusiness.title}</h2>
                         <h6>#id: {detailBusiness.business_id}</h6>
                     </div>
-                    <span>$ Rate: {detailBusiness.price}</span>
+                    <span>Rate: ${detailBusiness.price}</span>
                     <p>Address: {detailBusiness.address}</p>
                     <p>Description: {detailBusiness.description}</p>
                     <p>Content: {detailBusiness.content}</p>
