@@ -10,7 +10,8 @@
 }
 
 .window img{
-    width: 100%;
+    margin: 0 35px;
+    width: 80%;
     height: auto;
 }
 
