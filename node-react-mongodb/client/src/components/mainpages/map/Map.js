@@ -87,7 +87,7 @@ export default function Map() {
                   onCloseClick={() => setSelected({})}
                 ><div className="window">
                     <img src={selected.images.url} alt="" />
-                    <h2><b>{selected.title}</b></h2>
+                    <h1><b>{selected.title}</b></h1>
                     <p><b>Address:</b> {selected.address}</p>
                     <p><b>Average Visitor Spend:</b> ${selected.price}</p>
                     <button><Link to={`/detail/${selected._id}`}>More Information</Link></button>
