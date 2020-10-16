@@ -13,7 +13,7 @@ function BusinessItem({ business, isAdmin, deleteBusiness, handleCheck}) {
 
             <div className="business_box">
                 <h2 title={business.title}>{business.title}</h2>
-                <span>$ Price Rate $: {business.price} </span>
+                <span>Average Visitor Spend: ${business.price} </span>
                 <p>{business.description}</p>
             </div>
 
