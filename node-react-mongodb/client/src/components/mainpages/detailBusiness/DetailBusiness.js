@@ -39,14 +39,14 @@ function DetailBusiness() {
                     <span>Rate: ${detailBusiness.price}</span>
                     <p>Address: {detailBusiness.address}</p>
                     <p>Description: {detailBusiness.description}</p>
-                    <p>Content: {detailBusiness.content}</p>
+                    <p>Content: {detailBusiness.comment}</p>
                     <Link to="/favourite" className="favourite" 
                     onClick={() => addFavourite(detailBusiness)}>Add to Favourite</Link>
         
                     <button onClick={() => setShow(true)} style={{background: "#2c2c2c", fontSize: "15px", margin: ".5rem", padding:"10px 25px", display:"inline-block"}}>Review</button>
 
                 </div>
-                <Reviews show={show} closeReview={closeReview} />
+                <Reviews show={show} closeReview={closeReview} business={detailBusiness} />
                 <h2 className="menu-title">~Menu~</h2>
                 <img id="menu" src={detailBusiness.menu.url} alt="" />
             </div>

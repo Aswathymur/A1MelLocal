@@ -5,16 +5,20 @@ import {GlobalState} from '../../../../GlobalState'
 import './Review.css'
 
 const initialState = {
-    writer: '',
+    author: '',
+    business: '',
     rating: 0,
-    content: ''
+    comment: ''
 }
 
-function Reviews({show, closeReview}) {
+function Reviews({show, closeReview, business}) {
     const state = useContext(GlobalState)
     const [review, setReview] = useState(initialState)
 
     const [isLogged] = state.userAPI.isLogged
+
+    const [user] = state.userAPI.user
+
     const [token] = state.token
 
     const history = useHistory()
@@ -30,8 +34,11 @@ function Reviews({show, closeReview}) {
         e.preventDefault()
         try {
             if (!isLogged) return alert("You must login first")
-
             else{
+
+                review.author   = user._id
+                review.business = business._id
+
                 await axios.post('/api/reviews', {...review},{
                     headers: {Authorization: token}
                 })
@@ -57,16 +64,11 @@ function Reviews({show, closeReview}) {
                     <span onClick={closeReview} className="close">X</span>
                 </div>
                 <div className="review-content">
-                <div className="row">
-                    <label htmlFor="writer">Writer: </label>
-                    <input type="text" name="writer" id="writer" required
-                        value={review.writer} onChange={handleChangeInput}/>
-                </div>
 
                 <div className="row">
                     <label htmlFor="content">Content</label>
-                    <textarea type="text" name="content" id="content" required
-                        value={review.content} rows="7" onChange={handleChangeInput}/>
+                    <textarea type="text" name="comment" id="comment" required
+                        value={review.comment} rows="7" onChange={handleChangeInput}/>
                 </div>
 
                 <div className="row">
