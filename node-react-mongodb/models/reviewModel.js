@@ -1,17 +1,21 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const reviewSchema = new mongoose.Schema({
-    writer: {
-        type: String,
-        trim: true,
-        required: true
+    author:{
+        type: Schema.Types.ObjectId,
+        ref: "Users"
+    },
+    business:{
+        type: Schema.Types.ObjectId,
+        ref: "Businesses"
     },
     rating:{
         type: Number,
         trim: true,
         required: true
     },
-    content: {
+    comment: {
         type: String,
         trim: true,
         required: true
