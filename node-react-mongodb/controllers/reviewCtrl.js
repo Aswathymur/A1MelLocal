@@ -3,7 +3,10 @@ const Reviews = require('../models/reviewModel')
 const reviewCtrl = {
     getReviews: async(req, res) =>{
         try {
-            const reviews = await Reviews.find()
+            const reviews = await Reviews.aggregate([
+                {$lookup:{ from: 'users', localField:'author', 
+                    foreignField:'_id',as:'user'}},
+            ])
             res.json(reviews)
         } catch (err) {
             return res.status(500).json({msg: err.message})
