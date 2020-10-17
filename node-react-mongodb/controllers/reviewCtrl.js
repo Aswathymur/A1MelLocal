@@ -11,9 +11,9 @@ const reviewCtrl = {
     },
     createReview: async(req, res) =>{
         try {
-            const {writer, rating, content} = req.body;
+            const {author, business, comment, rating} = req.body;
             const newReview = new Reviews({
-                writer: writer.toLowerCase(), rating, content
+                author, business, comment, rating
             })
 
             await newReview.save()
