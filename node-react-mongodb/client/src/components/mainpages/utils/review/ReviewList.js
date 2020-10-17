@@ -3,7 +3,7 @@ import { GlobalState } from '../../../../GlobalState'
 import ReviewItem from '../review/ReviewItem'
 import axios from 'axios'
 
-function ReviewList() {
+function ReviewList(business) {
     const state = useContext(GlobalState)
     const [reviews] = state.reviewsAPI.reviews
     const [callback, setCallback]= state.reviewsAPI.callback
@@ -31,8 +31,9 @@ function ReviewList() {
            {
                reviews.map(review=>
                 {
-                   return <ReviewItem key={review._id} review={review} deleteReview={deleteReview}
-                                        isLogged={isLogged}/>
+                   return business.business._id === review.business
+                            ? <ReviewItem key={review._id} review={review} deleteReview={deleteReview} 
+                            isLogged={isLogged}/> : null
                })
            }
         </div>

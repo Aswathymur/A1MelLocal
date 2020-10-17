@@ -24,7 +24,6 @@ function DetailBusiness() {
     }, [params.id, businesses])
 
     if (detailBusiness.length === 0) return null;
-    
 
     return (
         <>
@@ -51,7 +50,7 @@ function DetailBusiness() {
                 <img id="menu" src={detailBusiness.menu.url} alt="" />
             </div>
             <div>
-                <ReviewList />
+                <ReviewList business={detailBusiness} />
             </div>
 
             <div>
