@@ -32,6 +32,10 @@ body {
     background-color: #E2E2E2;
 }
 
+.small-img {
+  max-width: 120px;
+}
+
 h2 {
     margin: 0;
     padding: 0;
@@ -111,11 +115,49 @@ li:hover {
     max-width: 12vw;
  }
 
-table, th, td {
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 20%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 20px;
   border: 1px solid black;
 }
-table {
-    width: 100%;
+
+th {
+  letter-spacing: 1px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tfoot th {
+  text-align: right;
 }
 
 footer {
