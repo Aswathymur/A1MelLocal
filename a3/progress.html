@@ -46,8 +46,6 @@
                     <h2>Project Progress</h2>
                     <h3>Description</h3>
 
-                    <p>Our project began in the conceptual stage, with many members forming ideas of what MelLocal would be. Eventually we settled on creating a Melbourne based travel application using a Maps API. This project topic was chosen as it gave us a chance to explore interacting with map data and a general interest in helping visitors and Melbourne businesses.</p>
-
                     <p>With several tourists set to travel to Melbourne once the pandemic comes to an end, our team decided to put together a project that eases the planning process for families, individuals, and exchange students to travel around.</p>
 
                     <p>With most of the team members being international students, we clearly understood the difficulty of trying to move around a new city. Building a website that improves the tourism in Melbourne will in return help build the economy of Victoria after these tough times. The team unanimously decided that this project idea will be very beneficial for all future travellers and students setting their foot in Melbourne.</p>
@@ -56,16 +54,32 @@
 
                     <p>We all lacked the knowledge and the skill required to build and establish a website with all the minimum viable features working. With one of our team members experiencing writing programs in python flask, the rest of us set out to learn a whole new language that we have never used before. This face of the project was very challenging.</p>
 
-                    <p>Different features of the website were taken up by different members of the group. The final set of MVF’s were:</p>
+                    <p>Different features of the website were taken up by different members of the group. The final set of MVF’s were:</p>   
 
                     <ul>
-                        <li>Allowing 2 different users for the website, one being a business owner (login as business owner to post, update and advertise a business in the website) and the being tourists.</li>
-                        <li>Filter Search. This feature was provided for the user to find a destination as quick as possible.</li>
-                        <li>Providing each business and tourist destination a review system. This allows the user to pick and choose the one that best suits them. This also allows the user to share their experience with other tourists.</li>
-                        <li>Creating a personal profile for the tourist to add destination or shopping areas to their favourite list for later travel plans. This allows the user to keep track of their searches and to add or delete destinations from their favourite list to plan their day properly.</li>
-                    </ul>
+                        <li>
+                            The website allows users to register for a personal account so they can access the system's advanced features like creating businesses, review business, add business to their favourite list and more
+                        </li>
+                        <li>
+                            Business users can sign up as a business owner and then are able to add business advertisements in the mellocal website and can also update their business for offers or new features
+                        </li>
+                        <li>
+                            Providing each business and tourist destination a review system. This allows the user to pick and choose the one that best suits them. This also allows the user to share their experience with other tourists
+                        </li>
+                        <li>
+                            Creating a personal profile for the tourist to add destination or shopping areas to their favourite list for later travel plans. This allows the user to keep track of their searches and to add or delete destinations from their favourite list to plan their day properly
+                        </li>
+                        <li>
+                            Displaying business features is the last but the most important feature of the project, this displays all the important information required for a user and allows the user to get a brief understanding of the business
+                        </li>
+                    </ul>    
 
                     <p>When we began our project our original plan was to use Python Flask, this was a purposeful decision as many of our group members had experience in HTML/CSS as this would mean that they could assist in creating and rendering templates. After week 7, our lead developer Harry had made significant progress in developing the same application using Node/React. Since there were two concurrent streams of development going on at that time, our group reached a consensus that in order to deliver our MVFs within the proposed schedule we may be required to switch technologies. Node React produced a significant learning curve for our group, with some members unable to contribute to the backend development of the application delegated to later testing.</p>
+
+
+                    <p>The issues with node.js came in when we had to render an array to return data and we had to figure out how to do a loop in react. The other major issue with this project came in due to the sudden switch in languages. Most of the team members were in a process to learn python flask, and this sudden switch did not allow most members to switch into a new language all of a sudden. This was later figured out, but led to a stage where not all members could contribute much to the backend of the development stage.</p>
+
+                    <p>Though we faced all these difficulties throughout the assignment, we take this up as a learning process, to build our skills not only in the technical field but also to improve ourselves when working in a team environment.</p>
 
                 </article>
                 <article class="section grey" id="outcomes">
@@ -109,6 +123,28 @@
 
                     <img src="Images/my_businesses.png" alt="My Businesses"/>
 
+                    <p>To create a business or category, the admin can click on the “CREATE BUSINESS” or “CREATE CATEGORY” button on the top right corner of My business page.</p>
+
+                    <img src="Images/category_edit.png" alt="Category Edit"/>
+
+                    <p>Creating a Business:</p>
+
+                    <img src="Images/create_business.png" alt="Create Business"/>
+
+                    <p> When the admin clicks on the “EDIT” button of the business or category on the My business page, the website will return all the information of the business/category. Then the admin can change that data by changing the form content and submitting it by clicking on the “UPDATE” button. The resulting updated business will then be returned.</p>
+
+                    <img src="Images/delete_business.png" alt="Delete Business"/>
+
+                    <p> To delete the business, the admin can press on the “DELETE” button on each business card, they can check on the business checkbox on the top of each business card if the admin wants to delete multiple businesses. They also can check on the “SELECT ALL” checkbox and press the “DELETE” button next to it if they want to delete all their created businesses.</p>
+
+                    <img src="Images/confirm_delete_business.png" alt="Confirm Delete Business"/>
+
+                    <p>When the admin clicks on the “DELETE” button, a popup will appear to confirm their decision to delete the selected business.</p>
+
+                    <img src="Images/delete_category.png" alt="Confirm Delete Business"/>
+
+                    <p>Deleting a category is different. It first requires the deletion of all associated businesses before the selected category can be deleted.</p>
+
                     <h4>MVF 3: Experience Review (Shanogeeth)</h4>
 
                     <p>The website allows the registered users to place their feedback on the particular service experienced. This will help the owner to understand the expectations of the customer and what they think about the service provided.</p>
@@ -119,7 +155,7 @@
 
                     <img src="Images/review_view.png" alt="Review View"/>
 
-                    <p>Once the user fills in the review form and clicks the ‘Submit’ button, the information will be stored in the database and displays a confirmation message to the user. Then it will be displayed under the product with the name of the customer, date,and the feedback given by that particular customer.</p>
+                    <p>Once the user fills in the review form and clicks the ‘Submit’ button, the information will be stored in the database and displays a confirmation message to the user. Then it will be displayed under that specific business with the name of the customer, date, and review comment.</p>
 
                     <h4>MVF 5: Display Business  Information (Luke)</h4>
 
@@ -255,8 +291,23 @@
 
                     <p>When it came time to deploy the application Git and bash was extremely useful in writing a script that can run on the AWS server. Since our application is hosted on an EC2 instance, we were able to install all required dependencies (MongoDB, git etc) using bash since the instance is based on Amazon Linux. Secure shell was used to login to the the server and deploy the application once the ssh key was setup.  </p>
 
+                    <table class="c65"><tbody><tr class="c53"><td class="c8" colspan="1" rowspan="1"><p class="c10"><span class="c55 c56">1 = low, 2 = average, 3 = high</span></p></td><td class="c70" colspan="3" rowspan="1"><p class="c10"><span class="c0">Team Member Proficiency </span></p></td></tr><tr class="c19"><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c0">Team Member</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c5">Github</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c5">NodeJS</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c5">MongoDB</span></p></td></tr><tr class="c19"><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c0">Aswathy</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td></tr><tr class="c19"><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c0">Eliza</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c0">2</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c0">1</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c0">2</span></p></td></tr><tr class="c19"><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c0">Shanogeeth</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td></tr><tr class="c19"><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c0">Harry</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td></tr><tr class="c19"><td class="c8" colspan="1" rowspan="1"><p class="c1"><span class="c0">Luke</span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td><td class="c8" colspan="1" rowspan="1"><p class="c1 c21"><span class="c0"></span></p></td></tr></tbody></table>
+
+                    <h4>Application Design</h4>
+
+                    <p>There are many routes available to the application, see the table below to find what they resolve to:</p>
+
+                    <table class="c59 c79"><tbody><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c26"><span class="c0">Route</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Returns</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Returns the map component (the main page focus of our application)</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c34">/map</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Renders a map component to the user</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c34">/login</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">A login form </span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/logout</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Clears refresh token from the user’s Cookie and logs them out</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c34">/directory</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Returns the same business data as /map however in a non-map (tiled) view</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/register</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">A register form (for both regular and business users)</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/favourite</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Returns the favourites that the user has added</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/addfavourite</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Looks up user and adds their favourite as an embedded object in the User model</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/detail/:id</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Returns details information for a business given a business id</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/category</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Allows the creation of categories if user is admin, or returns categories</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/category/:id</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Updates a given category by id (must be admin), allows delete category</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/businesses</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Allows users to get or get/create businesses</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/edit_business/:id</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Reuses create business methods to update business by id if user is admin</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/my_businesses</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Returns businesses created by that user (assuming user is as admin)</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/menu</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Allows for fetching and creating menu objects</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/menu/:id</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Updates or deletes a menu given a specific menu id</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/reviews</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Allows for fetching of reviews and creating of business reviews</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c73 c34 c84">/reviews/:id</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Allows for the deletion of reviews by id (assuming admin) - this route is deprecated in our application since the frontend component was removed as a result of a bug fix</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/upload</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Allows admins to upload images for their businesses</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/destroy</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">A route for users to delete their uploaded business images</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/refresh_token</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Resets the users refresh token stored in the browser cookie</span></p></td></tr><tr class="c21"><td class="c62" colspan="1" rowspan="1"><p class="c7"><span class="c3">/infor</span></p></td><td class="c51" colspan="1" rowspan="1"><p class="c26"><span class="c0">Gets user information given a user id</span></p></td></tr></tbody></table>
+
+
                     <h4>Database Design</h4>
-                    <h4>App Design</h4>
+
+                    <p>We have designed the schema and set up the database for storing Business, User, Category and Review information on MongoDB, see ER Diagram below.</p>
+
+                    <img src="Images/er_diagram.png" alt="ER Diagram"/>
+
+
+
                 </article>
             </main>
 
