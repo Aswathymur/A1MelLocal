@@ -38,11 +38,11 @@ function Header() {
     }
 
     const loggedOutRouter = () => {
-    	return (
-	        <>
-        		<li><Link to='/login'>Login/Register</Link></li>
-	        </>
-    	)
+        return (
+            <>
+                <li><Link to='/login'>Login/Register</Link></li>
+            </>
+        )
     }
 
     return (
